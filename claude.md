@@ -1,5 +1,18 @@
 # Claude.md — Pecuvate Main Site
 
+## Deployment
+
+- Platform: Netlify
+- Site name: pecuvate-main-site
+- Site ID: 17a3dfdf-178b-4c77-93eb-9bb659753d6b
+- Domain: pecuvate.com
+- Branch: main
+- Build command: npm run build
+- Publish dir: dist
+- GitHub repo: Pecuvate/pecuvate-main-site
+
+---
+
 ## Project Identity
 
 You are helping Shaun build the initial web presence for **Pecuvate** — a venture studio that transforms knowledge into scalable intellectual property through a structured ecosystem approach.
