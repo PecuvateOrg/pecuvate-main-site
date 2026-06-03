@@ -1,0 +1,41 @@
+---
+const entities = [
+  {
+    name: 'Pecuvate',
+    role: '[Pecuvate role in the ecosystem — see Production/01-content/ecosystem.md]',
+  },
+  {
+    name: 'Zenium Studios',
+    role: '[Zenium Studios role in the ecosystem — see Production/01-content/ecosystem.md]',
+  },
+  {
+    name: 'Resorz',
+    role: '[Resorz role in the ecosystem — see Production/01-content/ecosystem.md]',
+  },
+];
+---
+
+<section id="ecosystem" class="py-24 bg-white border-b border-surface-subtle">
+  <div class="w-full max-w-content mx-auto px-6">
+
+    <!-- Section Heading -->
+    <!-- TODO: Replace with approved copy from Production/01-content/ecosystem.md -->
+    <h2 class="text-3xl font-semibold mb-4 text-ink-primary">[Section heading]</h2>
+
+    <!-- Section Intro -->
+    <!-- TODO: Replace with approved copy -->
+    <p class="text-ink-muted max-w-2xl mb-16">[Section intro]</p>
+
+    <!-- Three Entities -->
+    <!-- TODO: Layout to show relationship (circular/triangular/nodes) — not a hierarchy -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {entities.map((entity) => (
+        <div class="p-8 border border-surface-subtle">
+          <h3 class="text-lg font-semibold mb-3 text-brand-orange">{entity.name}</h3>
+          <p class="text-ink-muted text-sm leading-relaxed">{entity.role}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

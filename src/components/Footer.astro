@@ -1,0 +1,28 @@
+---
+const year = new Date().getFullYear();
+
+// TODO: Replace with approved values from Production/01-content/footer.md
+const email = 'hello@pecuvate.com';
+const linkedin = 'https://linkedin.com/company/pecuvate';
+---
+
+<footer class="py-12 border-t border-surface-subtle">
+  <div class="w-full max-w-content mx-auto px-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+
+    <!-- Copyright -->
+    <p class="text-sm text-ink-muted">
+      &copy; {year} Pecuvate. All rights reserved.
+    </p>
+
+    <!-- Footer Links -->
+    <div class="flex gap-6 text-sm text-ink-muted">
+      <a href={`mailto:${email}`} class="hover:text-ink-primary transition-colors duration-200">
+        {email}
+      </a>
+      <a href={linkedin} target="_blank" rel="noopener noreferrer" class="hover:text-ink-primary transition-colors duration-200">
+        LinkedIn
+      </a>
+    </div>
+
+  </div>
+</footer>

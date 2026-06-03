@@ -1,0 +1,57 @@
+---
+// TODO: Replace placeholder posts with live Medium RSS fetch
+// See Production/03-technical/medium-integration.md for the build-time fetch approach
+
+const posts = [
+  {
+    title: '[Article title]',
+    excerpt: '[Article excerpt or summary]',
+    date: '[Publication date]',
+    url: '#',
+  },
+  {
+    title: '[Article title]',
+    excerpt: '[Article excerpt or summary]',
+    date: '[Publication date]',
+    url: '#',
+  },
+  {
+    title: '[Article title]',
+    excerpt: '[Article excerpt or summary]',
+    date: '[Publication date]',
+    url: '#',
+  },
+];
+---
+
+<section id="insights" class="py-24 border-b border-surface-subtle">
+  <div class="w-full max-w-content mx-auto px-6">
+
+    <!-- Section Heading -->
+    <!-- TODO: Replace with approved copy from Production/01-content/thinking-and-insights.md -->
+    <h2 class="text-3xl font-semibold mb-4 text-ink-primary">[Section heading]</h2>
+
+    <!-- Section Intro -->
+    <p class="text-ink-muted max-w-2xl mb-16">[Section intro]</p>
+
+    <!-- Post Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {posts.map((post) => (
+        <a
+          href={post.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block p-8 border border-surface-subtle bg-white hover:border-brand-orange transition-colors duration-200"
+        >
+          <p class="text-xs text-ink-muted mb-4">{post.date}</p>
+          <h3 class="text-base font-semibold mb-3 text-ink-primary leading-snug">{post.title}</h3>
+          <p class="text-sm text-ink-muted leading-relaxed">{post.excerpt}</p>
+        </a>
+      ))}
+    </div>
+
+    <!-- Fallback state — shown if Medium feed fails -->
+    <!-- TODO: Wire up fallback once live RSS fetch is implemented -->
+
+  </div>
+</section>

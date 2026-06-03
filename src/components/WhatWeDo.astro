@@ -1,0 +1,34 @@
+---
+const pillars = [
+  {
+    label: 'Systems Thinking',
+    description: 'Every engagement starts with understanding the problem — not the solution. We map the structure of a challenge before designing anything, because a system built on the wrong foundations will always fail.',
+  },
+  {
+    label: 'Technical Build',
+    description: 'We design and build with the technology that is right for the problem. That means choosing tools for capability, not fashion — and building them properly the first time so they do not need to be rebuilt.',
+  },
+  {
+    label: 'Enduring Value',
+    description: 'A system that works is one that compounds. We build for longevity — platforms that scale, automations that run without constant input, structures that generate value well beyond the initial build.',
+  },
+];
+---
+
+<section id="what-we-do" class="py-24 border-b border-surface-subtle">
+  <div class="w-full max-w-content mx-auto px-6">
+
+    <h2 class="text-3xl font-semibold mb-4 text-ink-primary">The approach</h2>
+    <p class="text-ink-muted max-w-2xl mb-16 leading-relaxed">Every output is a system — not a project, not a deliverable, but a structure that keeps working. The approach has always been the same; what has changed is the technology available to execute it.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {pillars.map((pillar) => (
+        <div class="p-8 border border-surface-subtle bg-white">
+          <h3 class="text-lg font-semibold mb-3 text-ink-primary">{pillar.label}</h3>
+          <p class="text-ink-muted text-sm leading-relaxed">{pillar.description}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
