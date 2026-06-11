@@ -24,3 +24,6 @@ pnpm-debug.log*
 
 # Windows
 Thumbs.db
+
+# Local Netlify folder
+.netlify
