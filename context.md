@@ -1,48 +1,47 @@
-# Project Context — Pecuvate Main Site
+# Pecuvate Main Site — Context
 
-## What we are building
+## What this project is
 
-A landing page for Pecuvate, deployed on Netlify, that serves as the initial web presence for the venture studio. The page introduces visitors to Pecuvate's model, surfaces thought leadership via a Medium blog feed, and provides clear pathways to engage.
+Static Astro site — the primary web presence for the Pecuvate venture studio. Single-page landing at `pecuvate.com`. Introduces the knowledge ecosystem model and surfaces Medium blog content.
 
-This is Phase 1 — a focused, single-page presence. It is designed to be modular enough to grow into a full platform without a rebuild.
-
-## The page sections (in order)
+## Page sections
 
 1. **Hero** — Immediate clarity on what Pecuvate is
-2. **What Pecuvate Does** — The three functions: Knowledge Extraction, Knowledge Architecture, Knowledge Commercialisation
+2. **What Pecuvate Does** — Knowledge Extraction, Knowledge Architecture, Knowledge Commercialisation
 3. **The Pecuvate Ecosystem** — How Pecuvate, Zenium Studios, and Resorz work together
-4. **Thinking & Insights** — Dynamic feed of Medium articles
-5. **Connect** — Email and LinkedIn contact with on-brand CTAs
+4. **Thinking & Insights** — Build-time Medium RSS feed
+5. **Connect** — Email and LinkedIn contact
 6. **Footer** — Minimal closure
 
-## What good looks like
+## Structure (post src/ migration, 2026-06-23)
 
-The page immediately communicates that Pecuvate is a venture studio — not an agency, not a consultancy. A first-time visitor understands the knowledge ecosystem model without it being explained to them in dense text. The design feels like a system: structured, purposeful, architectural. Credible knowledge originators can see themselves in it.
+```
+Pecuvate Main Site/
+  CLAUDE.md             MWP identity + routing
+  CONTEXT.md            This file
+  netlify.toml          base = "src", publish = "dist"
+  Production/           Content, design, asset planning docs
+  planning/             Feature specs and ADRs
+  ops/                  Deployment runbooks
+  src/                  MWP src root
+    astro.config.mjs
+    package.json
+    tailwind.config.mjs
+    tsconfig.json
+    public/             Static assets
+    src/                Astro source (components, layouts, pages, styles)
+    dist/               Build output (gitignored)
+```
 
-## What to avoid
+## Tech stack
 
-- Agency aesthetics: vague taglines, hero images of people shaking hands, "we help you grow" copy
-- Selling services — this page explains a system and a methodology
-- Disconnected content — every element must connect back to the knowledge venture model
-- Trendy design that will feel dated — the visual language should be timeless
-
-## How this project is organised
-
-All planning, content, design, and deployment documentation lives in `Production/`. Start there.
-
-| Folder | Purpose |
-|--------|---------|
-| [Production/01-content/](Production/01-content/) | Copy and content decisions for each section |
-| [Production/02-design/](Production/02-design/) | Design system, color, typography, visual direction |
-| [Production/03-technical/](Production/03-technical/) | Stack, build setup, Medium integration, requirements |
-| [Production/04-deployment/](Production/04-deployment/) | Netlify config, environment variables, deploy checklist |
-| [Production/05-assets/](Production/05-assets/) | Asset tracking — logo, icons, imagery |
-| [Production/06-skills/](Production/06-skills/) | Custom Claude skills for auditing and navigation |
+| Layer | Choice |
+|---|---|
+| Framework | Astro (static output) |
+| Styling | Tailwind CSS |
+| Deployment | Netlify — `pecuvate.com` |
+| Content | Build-time Medium RSS fetch |
 
 ## Current phase
 
-**Phase 1: Planning & Content** — filling in all `[ ]` decisions across `01-content/` before any design or build work begins.
-
-## Deployment target
-
-Netlify — connected to a git repository, deployed from `main` branch.
+Live at `pecuvate.com` (confirmed 2026-06-23). Phase 1 complete.
