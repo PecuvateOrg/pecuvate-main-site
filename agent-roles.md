@@ -1,4 +1,4 @@
-# Agents — Pecuvate Main Site
+# Agents - Pecuvate Main Site
 
 ## Active Agents
 
@@ -8,6 +8,6 @@
 
 ## Constraints
 
-- Content decisions (copy, positioning) require user input — do not generate Pecuvate copy without asking
+- Content decisions (copy, positioning) require user input; do not generate Pecuvate copy without asking
 - Design decisions require checking `Production/context-guide.md` first
 - Do not add dependencies without a stated reason
