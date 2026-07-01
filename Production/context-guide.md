@@ -17,8 +17,8 @@ The landing page should visually embody the systems-thinking approach that defin
 
 **Content Elements**:
 - Pecuvate wordmark/logo
-- Core positioning statement that captures the venture studio model
-- Brief subtitle that explains the knowledge ecosystem approach
+- Core positioning statement — derive from KB: `overview/positioning.md` (vision + tagline)
+- Brief subtitle — derive from KB: `entities/pecuvate.md` (What Pecuvate Is)
 - Visual treatment that suggests structure and systems
 
 **Tone**: Clear, confident, architectural
@@ -30,12 +30,11 @@ The landing page should visually embody the systems-thinking approach that defin
 - Whitespace that feels intentional, not empty
 
 ### 2. What Pecuvate Does Section
-**Purpose**: Explain the venture studio model in accessible terms
+**Purpose**: Explain the OS model in accessible terms
 
 **Content Elements**:
-- Concise explanation of how Pecuvate transforms knowledge into ventures
-- The three primary functions: Knowledge Extraction, Knowledge Architecture, Knowledge Commercialisation
-- Visual representation of the process or ecosystem (could be diagram, icon system, or structured layout)
+- Derive from KB: `entities/pecuvate.md` → "How Pecuvate Operates Externally" (three delivery modes + flywheel)
+- Visual representation of the three modes and how they form a flywheel
 
 **Tone**: Educational but not academic, systematic without being cold
 
@@ -50,8 +49,10 @@ The landing page should visually embody the systems-thinking approach that defin
 **Purpose**: Show that Pecuvate operates as part of a larger system
 
 **Content Elements**:
-- Brief introduction to the three entities: Pecuvate, Zenium Studios, Resorz
-- How they work together to transform knowledge into ventures
+- The three commercial entities: Pecuvate, Zenium, Resorz — derive roles from their respective KBs:
+  - Pecuvate: `C:\Users\pecul\OneDrive\Apps\Obsidian\PECUVATE\entities\pecuvate.md`
+  - Resorz: `C:\Users\pecul\OneDrive\Apps\Obsidian\RESORZ\entities\resorz.md`
+  - Zenium: `C:\Users\pecul\OneDrive\Apps\Obsidian\ZENIUM\KNOWLEDGE BASE\entities\zenium.md` (when built)
 - Visual connection between the three (suggesting ecosystem, not hierarchy)
 
 **Tone**: Interconnected, purposeful
