@@ -1,7 +1,10 @@
 # Pecuvate Main Site
 
 ## Identity
-Astro static site — the primary web presence for the Pecuvate venture studio. Single-page landing at `pecuvate.com`. Introduces the knowledge ecosystem model (Pecuvate, Zenium Studios, Resorz) and surfaces thought leadership via a Medium blog feed. Not a marketing site — a system made visible.
+Astro static site — primary web presence for Pecuvate at `pecuvate.com`. Surfaces thought leadership via a Medium blog feed. Not a marketing site — a system made visible.
+
+For Pecuvate's positioning, delivery modes, and entity descriptions to use in site copy — read the KB:
+`C:\Users\pecul\OneDrive\Apps\Obsidian\PECUVATE\_schema.md` → `overview/positioning.md`
 
 ## Self-Reference
 Inherits from `F:\Projects\CLAUDE.md` (Layer 0) and `F:\Projects\_config\`. This file is the map — workspace detail lives in each CONTEXT.md.

@@ -2,13 +2,16 @@
 
 ## What this project is
 
-Static Astro site — the primary web presence for the Pecuvate venture studio. Single-page landing at `pecuvate.com`. Introduces the knowledge ecosystem model and surfaces Medium blog content.
+Static Astro site at `pecuvate.com`. Surfaces Medium blog content and introduces Pecuvate and its ecosystem.
+
+For copy, positioning, and entity descriptions — read the KB before writing any site content:
+`C:\Users\pecul\OneDrive\Apps\Obsidian\PECUVATE\_schema.md` → `index.md`
 
 ## Page sections
 
-1. **Hero** — Immediate clarity on what Pecuvate is
-2. **What Pecuvate Does** — Knowledge Extraction, Knowledge Architecture, Knowledge Commercialisation
-3. **The Pecuvate Ecosystem** — How Pecuvate, Zenium Studios, and Resorz work together
+1. **Hero** — What Pecuvate is (derive from `overview/positioning.md`)
+2. **What Pecuvate Does** — Three delivery modes (derive from `entities/pecuvate.md`)
+3. **The Pecuvate Ecosystem** — Pecuvate, Zenium, Resorz (derive from `overview/company.md`)
 4. **Thinking & Insights** — Build-time Medium RSS feed
 5. **Connect** — Email and LinkedIn contact
 6. **Footer** — Minimal closure
