@@ -2,15 +2,15 @@
 const entities = [
   {
     name: 'Pecuvate',
-    role: '[Pecuvate role in the ecosystem — see Production/01-content/ecosystem.md]',
+    role: 'The operating system — identifies, tests, builds, and scales the ventures that run on it.',
   },
   {
-    name: 'Zenium Studios',
-    role: '[Zenium Studios role in the ecosystem — see Production/01-content/ecosystem.md]',
+    name: 'Zenium',
+    role: 'Media production and marketing — content systems and the knowledge extraction pattern that feeds back into the OS.',
   },
   {
     name: 'Resorz',
-    role: '[Resorz role in the ecosystem — see Production/01-content/ecosystem.md]',
+    role: 'Commerce — wellness products built on a Shopify, FBA, and supply-chain architecture.',
   },
 ];
 ---
@@ -19,15 +19,13 @@ const entities = [
   <div class="w-full max-w-content mx-auto px-6">
 
     <!-- Section Heading -->
-    <!-- TODO: Replace with approved copy from Production/01-content/ecosystem.md -->
-    <h2 class="text-3xl font-semibold mb-4 text-ink-primary">[Section heading]</h2>
+    <h2 class="text-3xl font-semibold mb-4 text-ink-primary">One system, three engines</h2>
 
     <!-- Section Intro -->
-    <!-- TODO: Replace with approved copy -->
-    <p class="text-ink-muted max-w-2xl mb-16">[Section intro]</p>
+    <p class="text-ink-muted max-w-2xl mb-16">Pecuvate runs the OS. Zenium and Resorz are two of the ventures it produces — proof the same methodology holds across sectors, not one studio doing three unrelated things.</p>
 
     <!-- Three Entities -->
-    <!-- TODO: Layout to show relationship (circular/triangular/nodes) — not a hierarchy -->
+    <!-- Layout shows relationship, not hierarchy — see Production/01-content/ecosystem.md for the deferred circular/node treatment -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {entities.map((entity) => (
         <div class="p-8 border border-surface-subtle">

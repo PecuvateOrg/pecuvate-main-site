@@ -5,7 +5,7 @@
 Static Astro site at `pecuvate.com`. Surfaces Medium blog content and introduces Pecuvate and its ecosystem.
 
 For copy, positioning, and entity descriptions — read the KB before writing any site content:
-`C:\Users\pecul\OneDrive\Apps\Obsidian\PECUVATE\_schema.md` → `index.md`
+`F:\Projects\vaults\PECUVATE\_schema.md` → `index.md`
 
 ## Page sections
 
