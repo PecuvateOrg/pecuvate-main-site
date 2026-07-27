@@ -1,5 +1,13 @@
 # DEVLOG — Pecuvate Main Site
 
+## 2026-07-27
+
+- Wrote and committed `planning/spec/site-positioning-spec.md` — resolves the gap the 2026-07-21 copy pass left: it fixed "venture studio" but replaced it with internal OS-of-BFG-Alliance language, which fails the stranger test on a public site
+- Spec rules which of the KB's two voice layers is public-facing: external positioning (problem-first business model architect) leads; the OS/BFG story is depth in the Ecosystem section, not the front door
+- Proposes three hero options (endurance conviction / approved tagline / problem-first) and sets copy rules — architect+build always paired, no advisory-only language, disclose the Empowr group relationship, no bare self-assessed £ figures
+- Spec status: DRAFT, pending founder review — hero choice and vision statement remain open decisions
+- Next session: build out the spec once founder has reviewed/chosen a hero direction
+
 ## 2026-07-21
 
 - Realigned site copy to current KB-settled identity (Pecuvate as BFG Alliance's OS, not a "venture studio") — Hero, What We Do, Work, Ecosystem sections rewritten from `F:\Projects\vaults\PECUVATE\` (spec v2.0)
