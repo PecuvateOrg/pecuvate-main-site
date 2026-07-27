@@ -1,0 +1,38 @@
+---
+const stages = [
+  {
+    step: '01',
+    label: 'Identify',
+    description: 'Locate the constraint that is actually binding the business — not the symptom it presents as.',
+  },
+  {
+    step: '02',
+    label: 'Architect',
+    description: 'Redesign the business model around that constraint, not just the process that surfaces it.',
+  },
+  {
+    step: '03',
+    label: 'Build',
+    description: 'Build the system that makes the fix permanent — the model on paper becomes the thing that runs.',
+  },
+];
+---
+
+<section id="method" class="py-24 bg-white border-b border-surface-subtle">
+  <div class="w-full max-w-content mx-auto px-6">
+
+    <h2 class="text-3xl font-semibold mb-4 text-ink-primary">The method</h2>
+    <p class="text-ink-muted max-w-2xl mb-16 leading-relaxed">Every engagement runs the same three stages, whatever form the work takes.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {stages.map((stage) => (
+        <div class="p-8 border border-surface-subtle">
+          <p class="text-xs font-medium text-brand-orange uppercase tracking-widest mb-3">{stage.step}</p>
+          <h3 class="text-lg font-semibold mb-3 text-ink-primary">{stage.label}</h3>
+          <p class="text-ink-muted text-sm leading-relaxed">{stage.description}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
