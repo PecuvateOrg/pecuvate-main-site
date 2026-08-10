@@ -50,9 +50,9 @@ The landing page should visually embody the systems-thinking approach that defin
 
 **Content Elements**:
 - The three commercial entities: Pecuvate, Zenium, Resorz — derive roles from their respective KBs:
-  - Pecuvate: `C:\Users\pecul\OneDrive\Apps\Obsidian\PECUVATE\entities\pecuvate.md`
-  - Resorz: `C:\Users\pecul\OneDrive\Apps\Obsidian\RESORZ\entities\resorz.md`
-  - Zenium: `C:\Users\pecul\OneDrive\Apps\Obsidian\ZENIUM\KNOWLEDGE BASE\entities\zenium.md` (when built)
+  - Pecuvate: `F:\Projects\vaults\PECUVATE\entities\pecuvate.md`
+  - Resorz: `F:\Projects\vaults\RESORZ\entities\resorz.md`
+  - Zenium: `F:\Projects\vaults\PECUVATE\entities\zenium.md` — the Zenium vault is scaffolded but has no content yet, so the Pecuvate vault currently holds the authoritative Zenium record. Note its mission there is still **draft**. The name is always *Zenium*, never "Xenium".
 - Visual connection between the three (suggesting ecosystem, not hierarchy)
 
 **Tone**: Interconnected, purposeful
