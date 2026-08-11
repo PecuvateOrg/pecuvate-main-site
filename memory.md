@@ -15,6 +15,7 @@
 - Phase 1 presence complete
 - Copy realigned to current KB identity 2026-07-21 (Hero/What We Do/Work/Ecosystem rewritten off the OS-of-BFG framing; Ecosystem section finished, was shipping placeholder TODOs)
 - Public positioning spec written + committed 2026-07-27 (`planning/spec/site-positioning-spec.md`) — corrects the 2026-07-21 pass, which fixed "venture studio" but replaced it with internal OS language that fails the stranger test; rules external positioning as the public-facing voice layer
+- KB routing repaired 2026-08-11 — `claude.md` had pointed at a dead OneDrive path and the retired `overview/` folder since before the 2026-07-21 sweep (which fixed `CONTEXT.md` but missed this file), so any agent fetching identity for site copy got nothing and would have written from imagination. Now routes to named pages under `vaults/PECUVATE`: `synthesis/public-positioning` for external copy, `synthesis/positioning` for voice, `entities/pecuvate`, `concepts/three-modes`
 
 ## Outstanding
 

@@ -1,5 +1,12 @@
 # DEVLOG — Pecuvate Main Site
 
+## 2026-08-11
+
+- Replaced the dead KB route in `claude.md`: it pointed at a OneDrive path (`OneDrive/Apps/Obsidian/PECUVATE/_schema.md`) that no longer exists, then at `overview/positioning.md`, a folder the KB spec retired. An agent writing site copy got nothing back and would have written from imagination.
+- Now routes to named vault pages MWP stage-contract style - `synthesis/public-positioning`, `synthesis/positioning`, `entities/pecuvate`, `concepts/three-modes` - under `vaults/PECUVATE`.
+- Same fix in `Production/context-guide.md`, where the Zenium entry also pointed into a `KNOWLEDGE BASE/` subfolder; Zenium's vault has no content yet, so it now points at the authoritative record in the Pecuvate vault and flags that mission as draft.
+- This completes what the 2026-07-21 path sweep missed: `CONTEXT.md` was corrected then, `CLAUDE.md` was not.
+
 ## 2026-07-27
 
 - Wrote and committed `planning/spec/site-positioning-spec.md` — resolves the gap the 2026-07-21 copy pass left: it fixed "venture studio" but replaced it with internal OS-of-BFG-Alliance language, which fails the stranger test on a public site
