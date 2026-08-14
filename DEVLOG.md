@@ -1,5 +1,10 @@
 # DEVLOG — Pecuvate Main Site
 
+## 2026-08-14
+
+- Created `README.md` — project overview and setup docs, closing the mwp-health M10 gap (was missing entirely)
+- Added a `## Skills and Tools Available` section to `CLAUDE.md` (M8)
+
 ## 2026-08-11
 
 - Replaced the dead KB route in `claude.md`: it pointed at a OneDrive path (`OneDrive/Apps/Obsidian/PECUVATE/_schema.md`) that no longer exists, then at `overview/positioning.md`, a folder the KB spec retired. An agent writing site copy got nothing back and would have written from imagination.
@@ -25,10 +30,4 @@
 - Build verified clean; only remaining placeholder content is `Insights.astro` (Medium RSS — separate technical task)
 - Not addressed: vision statement/tagline finalisation — still flagged pending in the KB itself, needs a founder decision
 
-## 2026-06-23
-
-- src/ migration complete — all code moved to `src/` per MWP convention
-- netlify.toml updated: `base = "src"`, `publish = "dist"`
-- Build verified from `src/`: 1 page generated successfully
-- CLAUDE.md rewritten with all 7 MWP sections
-- CONTEXT.md updated to reflect post-migration structure
+## 2026-06-23 — src/ migration complete (`base="src"`, `publish="dist"`), build verified, CLAUDE.md rewritten with all 7 MWP sections, CONTEXT.md updated
