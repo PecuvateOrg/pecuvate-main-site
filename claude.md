@@ -87,3 +87,15 @@ Inherits from `F:\Projects\CLAUDE.md` (Layer 0) and `F:\Projects\_config\`. This
 - Do not load `Production/` unless working on content, design, or assets
 - Before any structural or design decision, read `Production/context-guide.md`
 - Before any deploy, run `Production/04-deployment/deploy-checklist.md`
+
+---
+
+## Skills and Tools Available
+
+| Tool / Skill | Trigger | Purpose |
+|---|---|---|
+| `/netlify-deploy` | going live, deploying, or changing domain config | Deploy to Netlify and configure `pecuvate.com` |
+| `/pre-build-check` | before any deploy | Validate build structure and frontend quality |
+| `/pre-deploy-security` | before any deploy | Security hygiene scan — FAILs block the deploy |
+| `/webapp-testing` | after frontend changes | Test UI with Playwright |
+| `/simplify` | after a feature or content pass | Review changed code for reuse, quality, efficiency |
