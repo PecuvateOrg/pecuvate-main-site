@@ -1,5 +1,13 @@
 # DEVLOG — Pecuvate Main Site
 
+## 2026-08-23
+
+- Migrated to pnpm 11.22.0 (`pnpm import` from package-lock.json), pinned `packageManager`, deleted package-lock.json
+- Raised `NODE_VERSION` 18 -> 22 in netlify.toml - required, not cosmetic: pnpm 11 declares `engines.node >= 22.13`, so the old pin would have failed CI outright
+- Astro needs no `nodeLinker: hoisted` workaround - that is only for `@netlify/plugin-nextjs` - so this keeps pnpm's isolated layout and full dedup
+- Verified through Netlify's real pipeline (`netlify build`, exit 0); built `dist/index.html` 9,818 bytes, byte-identical to the live site
+- Deployed and verified live: deploy `state: ready`, www 200 at 0.28s, apex 301 -> www
+
 ## 2026-08-14
 
 - Created `README.md` — project overview and setup docs, closing the mwp-health M10 gap (was missing entirely)
@@ -20,14 +28,6 @@
 - Spec status: DRAFT, pending founder review — hero choice and vision statement remain open decisions
 - Next session: build out the spec once founder has reviewed/chosen a hero direction
 
-## 2026-07-21
-
-- Realigned site copy to current KB-settled identity (Pecuvate as BFG Alliance's OS, not a "venture studio") — Hero, What We Do, Work, Ecosystem sections rewritten from `F:\Projects\vaults\PECUVATE\` (spec v2.0)
-- Finished Ecosystem.astro — was shipping placeholder TODO brackets in production
-- Added AI-ROI stat (£113,800–£188,500 delivered for Empowr CIC, Mar–Jun 2026) to Work section
-- Fixed CONTEXT.md's stale KB pointer (dead OneDrive Obsidian path → `F:\Projects\vaults\PECUVATE`)
-- Synced `Production/01-content/*.md` planning docs to match — retired the older "Knowledge Extraction/Architecture/Commercialisation" framing in `what-pecuvate-does.md`, which predated what was actually live
-- Build verified clean; only remaining placeholder content is `Insights.astro` (Medium RSS — separate technical task)
-- Not addressed: vision statement/tagline finalisation — still flagged pending in the KB itself, needs a founder decision
+## 2026-07-21 — Realigned site copy to current KB-settled identity (Pecuvate as BFG Alliance's OS, not a "venture studio") — Hero, What We Do, Work, Ecosystem sections rewritten...
 
 ## 2026-06-23 — src/ migration complete (`base="src"`, `publish="dist"`), build verified, CLAUDE.md rewritten with all 7 MWP sections, CONTEXT.md updated
