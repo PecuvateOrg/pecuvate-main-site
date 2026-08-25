@@ -1,6 +1,6 @@
 # DEVLOG — Pecuvate Main Site
 
-## 2026-08-24
+## 2026-08-23
 
 - Migrated to pnpm 11.22.0 (`pnpm import` from package-lock.json), pinned `packageManager`, deleted package-lock.json
 - Raised `NODE_VERSION` 18 -> 22 in netlify.toml - required, not cosmetic: pnpm 11 declares `engines.node >= 22.13`, so the old pin would have failed CI outright
