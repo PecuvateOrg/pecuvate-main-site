@@ -5,7 +5,7 @@
 | Service | Detail |
 |---|---|
 | Hosting | Netlify — `pecuvate.com` |
-| GitHub | `Pecuvate/pecuvate-main-site` |
+| GitHub | Public repository `PecuvateOrg/pecuvate-main-site`; `main` is PR-only with zero required approvals |
 | Site ID | `17a3dfdf-178b-4c77-93eb-9bb659753d6b` |
 
 ## Current State
