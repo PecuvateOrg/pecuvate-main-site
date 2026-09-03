@@ -1,5 +1,12 @@
 # DEVLOG — Pecuvate Main Site
 
+## 2026-09-03 — Repository audited, made public, and transferred to PecuvateOrg
+
+- Scanned current files and full Git history before publication; no high-confidence credentials or sensitive filenames were found
+- Transferred the repository to `PecuvateOrg/pecuvate-main-site`; local `origin` and the Netlify registry now use the canonical organisation URL
+- `main` requires a pull request with zero approvals, so the owner can self-merge while direct pushes, force-pushes, and branch deletion remain blocked
+- No application files changed and `pecuvate.com` remained live
+
 ## 2026-08-23
 
 - Migrated to pnpm 11.22.0 (`pnpm import` from package-lock.json), pinned `packageManager`, deleted package-lock.json
@@ -20,13 +27,7 @@
 - Same fix in `Production/context-guide.md`, where the Zenium entry also pointed into a `KNOWLEDGE BASE/` subfolder; Zenium's vault has no content yet, so it now points at the authoritative record in the Pecuvate vault and flags that mission as draft.
 - This completes what the 2026-07-21 path sweep missed: `CONTEXT.md` was corrected then, `CLAUDE.md` was not.
 
-## 2026-07-27
-
-- Wrote and committed `planning/spec/site-positioning-spec.md` — resolves the gap the 2026-07-21 copy pass left: it fixed "venture studio" but replaced it with internal OS-of-BFG-Alliance language, which fails the stranger test on a public site
-- Spec rules which of the KB's two voice layers is public-facing: external positioning (problem-first business model architect) leads; the OS/BFG story is depth in the Ecosystem section, not the front door
-- Proposes three hero options (endurance conviction / approved tagline / problem-first) and sets copy rules — architect+build always paired, no advisory-only language, disclose the Empowr group relationship, no bare self-assessed £ figures
-- Spec status: DRAFT, pending founder review — hero choice and vision statement remain open decisions
-- Next session: build out the spec once founder has reviewed/chosen a hero direction
+## 2026-07-27 — Wrote the draft public-positioning specification; founder hero and vision choices remain open before implementation
 
 ## 2026-07-21 — Realigned site copy to current KB-settled identity (Pecuvate as BFG Alliance's OS, not a "venture studio") — Hero, What We Do, Work, Ecosystem sections rewritten...
 
