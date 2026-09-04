@@ -27,3 +27,9 @@ Thumbs.db
 
 # Local Netlify folder
 .netlify
+
+# Internal workspace documents — held privately by the Pecuvate hub.
+# This repo is PUBLIC; these carry operational detail and must never be
+# tracked here. See ../CONTEXT.md and ../workspace-docs/pecuvate-main-site/.
+DEVLOG.md
+memory.md
