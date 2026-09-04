@@ -1,5 +1,18 @@
 # Pecuvate Main Site
 
+> **This repository is PUBLIC** (`PecuvateOrg/pecuvate-main-site`).
+>
+> **Devlog and memory location:** `../workspace-docs/pecuvate-main-site/`
+>
+> `DEVLOG.md` and `memory.md` are **not** kept in this repo — they hold operational
+> detail that must not be world-readable. Write session entries to the path above,
+> in the private Pecuvate hub. Both filenames are gitignored here, so a copy created
+> in this directory is silently never committed.
+>
+> Never put live identifiers, unremediated security findings, or commercial state
+> in any file tracked here. See `../CONTEXT.md` and
+> `_config/guides/public-repo-collaboration.md`.
+
 ## Identity
 Astro static site — primary web presence for Pecuvate at `pecuvate.com`. Surfaces thought leadership via a Medium blog feed. Not a marketing site — a system made visible.
 
