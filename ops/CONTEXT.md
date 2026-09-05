@@ -6,7 +6,7 @@ Deployment config and operational runbooks for the Pecuvate Main Site.
 
 - Platform: Netlify
 - Domain: `pecuvate.com`
-- GitHub: `Pecuvate/pecuvate-main-site`
+- GitHub: `PecuvateOrg/pecuvate-main-site` (public)
 - Site ID: `17a3dfdf-178b-4c77-93eb-9bb659753d6b`
 - Branch: main
 - Base directory: `src/`
