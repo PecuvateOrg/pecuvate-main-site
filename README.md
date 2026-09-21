@@ -2,7 +2,7 @@
 
 Astro static site — Pecuvate's primary web presence at [pecuvate.com](https://pecuvate.com). Introduces Pecuvate and the wider ecosystem (Zenium, Resorz) and surfaces thought leadership via a build-time Medium RSS feed. Not a marketing site — a system made visible: architectural tone, no "book a call" / growth-agency language.
 
-Copy and positioning are sourced from the Pecuvate KB (`F:\Projects\vaults\PECUVATE`), never hardcoded from imagination — see `CLAUDE.md` for the routing table.
+Copy and positioning are sourced from the Pecuvate KB (`~/projects/vaults/PECUVATE`), never hardcoded from imagination — see `CLAUDE.md` for the routing table.
 
 ## Local setup
 

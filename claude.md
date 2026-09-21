@@ -16,7 +16,7 @@
 ## Identity
 Astro static site — primary web presence for Pecuvate at `pecuvate.com`. Surfaces thought leadership via a Medium blog feed. Not a marketing site — a system made visible.
 
-For Pecuvate's positioning, delivery modes, and entity descriptions to use in site copy — read the KB at `F:\Projects\vaults\PECUVATE`. Route to named pages, never to the vault generally:
+For Pecuvate's positioning, delivery modes, and entity descriptions to use in site copy — read the KB at `~/projects/vaults/PECUVATE`. Route to named pages, never to the vault generally:
 
 | Need | Read |
 |---|---|
@@ -29,7 +29,7 @@ For Pecuvate's positioning, delivery modes, and entity descriptions to use in si
 The KB is the single source of truth — never restate entity identity in site copy or in this repo's files.
 
 ## Self-Reference
-Inherits from `F:\Projects\CLAUDE.md` (Layer 0) and `F:\Projects\_config\`. This file is the map — workspace detail lives in each CONTEXT.md.
+Inherits from `~/projects/CLAUDE.md` (Layer 0) and `~/projects/_config/`. This file is the map — workspace detail lives in each CONTEXT.md.
 
 ---
 
