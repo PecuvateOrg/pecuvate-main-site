@@ -4,14 +4,8 @@
 >
 > **Devlog and memory location:** `../workspace-docs/pecuvate-main-site/`
 >
-> `DEVLOG.md` and `memory.md` are **not** kept in this repo — they hold operational
-> detail that must not be world-readable. Write session entries to the path above,
-> in the private Pecuvate hub. Both filenames are gitignored here, so a copy created
-> in this directory is silently never committed.
->
-> Never put live identifiers, unremediated security findings, or commercial state
-> in any file tracked here. See `../CONTEXT.md` and
-> `_config/guides/public-repo-collaboration.md`.
+> `DEVLOG.md` and `memory.md` are not kept in this repo — write session entries to the path
+> above instead. See `NON-NEGOTIABLES.md` for what must never be committed here.
 
 ## Identity
 Astro static site — primary web presence for Pecuvate at `pecuvate.com`. Surfaces thought leadership via a Medium blog feed. Not a marketing site — a system made visible.
@@ -29,7 +23,9 @@ For Pecuvate's positioning, delivery modes, and entity descriptions to use in si
 The KB is the single source of truth — never restate entity identity in site copy or in this repo's files.
 
 ## Self-Reference
-Inherits from `~/projects/CLAUDE.md` (Layer 0) and `~/projects/_config/`. This file is the map — workspace detail lives in each CONTEXT.md.
+Inherits from `~/projects/CLAUDE.md` (Layer 0) and `~/projects/_config/`. This file is Layer 0 —
+routing only. Read `NON-NEGOTIABLES.md` before doing anything; project detail lives in each
+CONTEXT.md.
 
 ---
 
@@ -48,15 +44,6 @@ Inherits from `~/projects/CLAUDE.md` (Layer 0) and `~/projects/_config/`. This f
 
 - **Medium feed** — build-time RSS fetch baked into static HTML; no CMS or client-side loading
 - **Ecosystem links** — outbound links to Zenium Studios and Resorz project sites; keep URLs in a constants file, never hardcode inline
-
----
-
-## Naming Conventions
-
-- Components: PascalCase (`HeroSection.astro`)
-- Pages: Astro file-based routing in `src/src/pages/`
-- Styles: CSS custom properties for all design tokens — no magic numbers
-- Spacing: 8px base unit scale (defined in `Production/02-design/design-system.md`)
 
 ---
 
@@ -85,11 +72,7 @@ Inherits from `~/projects/CLAUDE.md` (Layer 0) and `~/projects/_config/`. This f
 | Design aesthetic | Systems-thinking, architectural | Mirrors Pecuvate's methodology |
 | Styling | Tailwind CSS | Agreed post-initial decisions |
 
-**Design constraints (non-negotiable):**
-- One `<h1>` per page; semantic HTML throughout
-- No bright gradients, bounce effects, glassmorphism, or agency aesthetics
-- Tone: clear, confident, architectural — explains a system, not a service
-- Never: "We help you grow", "Book a call", bullet lists of services
+Design constraints are non-negotiable — see `NON-NEGOTIABLES.md`.
 
 ---
 
