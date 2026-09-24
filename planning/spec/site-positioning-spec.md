@@ -2,7 +2,7 @@
 
 **Status:** DRAFT — for founder review. Not yet absorbed into the KB.
 **Created:** 2026-07-22
-**Sources:** `F:\Projects\vaults\PECUVATE\` — `synthesis/positioning.md`, `entities/pecuvate.md`, `entities/bfg-alliance.md`, `concepts/three-modes.md`, `concepts/pecuvate-os.md`, `synthesis/goals.md`, `synthesis/roadmap.md`
+**Sources:** `~/projects/vaults/PECUVATE/` — `synthesis/positioning.md`, `entities/pecuvate.md`, `entities/bfg-alliance.md`, `concepts/three-modes.md`, `concepts/pecuvate-os.md`, `synthesis/goals.md`, `synthesis/roadmap.md`
 **Absorption path:** once approved, this becomes `synthesis/public-positioning.md` in the PECUVATE vault (+ index row + log entry), and it governs all public-facing Pecuvate copy from then on. It resolves roadmap open questions #2 (narrative order per audience) and #3 (portfolio as proof without reduction) for the website surface.
 
 ---
