@@ -2,7 +2,7 @@
 
 This is the production workspace for building and deploying the Pecuvate landing page. It contains all planning, content, design, technical, and deployment documentation needed to take the site from concept to live on Netlify.
 
-Always start with `claude.md` at the project root for identity and rules, then `context-guide.md` here for the master structure of the page.
+Always start with `CLAUDE.md` at the project root for identity and rules, then `context-guide.md` here for the master structure of the page.
 
 ## What the process looks like (first I do this, then I do that)
 
@@ -16,7 +16,7 @@ Always start with `claude.md` at the project root for identity and rules, then `
 ## What files are in here and how they are organized
 
 - `context-guide.md` — Master structure document for the landing page (source of truth)
-- `context.md` — This file. Workspace orientation.
+- `CONTEXT.md` — This file. Workspace orientation.
 - `01-content/` — One file per page section. Documents approved copy and content gaps.
 - `02-design/` — Design system, color, typography, visual direction.
 - `03-technical/` — Medium integration, performance, accessibility requirements.
