@@ -1,0 +1,40 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogHeader from '@/components/BlogHeader.astro';
+import Footer from '@/components/Footer.astro';
+import { getPublishedPosts, formatDate } from '@/lib/blog';
+
+const posts = await getPublishedPosts();
+---
+
+<BaseLayout
+  title="Thinking — Pecuvate"
+  description="Essays on rethinking how problems get solved, and on the intelligent application of technology to solve them."
+>
+  <BlogHeader />
+  <main class="py-24">
+    <div class="w-full max-w-content mx-auto px-6">
+      <h1 class="text-4xl font-semibold mb-4 text-ink-primary">Thinking</h1>
+      <p class="text-ink-muted max-w-2xl mb-16">
+        How we must look at things in order to progress, using the resources and technology already in reach.
+      </p>
+
+      <ul class="divide-y divide-surface-subtle border-y border-surface-subtle">
+        {posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.id}/`} class="group block py-8">
+              <time datetime={post.data.pubDate.toISOString()} class="text-xs text-ink-muted">
+                {formatDate(post.data.pubDate)}
+              </time>
+              <h2 class="text-xl font-semibold mt-2 mb-2 text-ink-primary group-hover:text-brand-orange transition-colors duration-200">
+                {post.data.title}
+              </h2>
+              <p class="text-sm text-ink-muted leading-relaxed max-w-3xl">{post.data.description}</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
