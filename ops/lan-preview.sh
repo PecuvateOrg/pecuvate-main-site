@@ -4,8 +4,8 @@
 # previews are not used (build minutes are shared across every site); review
 # a branch here before merging.
 #
-#   bash ops/lan-preview.sh            # build, then serve on port 3101
-#   PORT=3105 bash ops/lan-preview.sh  # another port (3100-3109 are the LAN preview range)
+#   bash ops/lan-preview.sh            # build, then serve on port 3102
+#   PORT=3105 bash ops/lan-preview.sh  # another port (3100-3109 are the LAN preview range: Members 3100, EELA 3101, this site 3102)
 #
 # The build copies Netlify's: a clean, lockfile-exact install and the Node
 # major version from netlify.toml. If it builds here it should build on
@@ -13,7 +13,7 @@
 
 set -euo pipefail
 
-PORT="${PORT:-3101}"
+PORT="${PORT:-3102}"
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 LAN_IP="$(hostname -I | awk '{print $1}')"
 
