@@ -2,8 +2,8 @@
   base    = "src"
   command = "pnpm run build"
   publish = "dist"
-  # Skip builds that cannot change the site; no PR previews unless the commit
-  # message has [preview]. Review locally with ops/lan-preview.sh. See ops/netlify-ignore.sh.
+  # Skip builds that cannot change the site, and never build PR/branch previews:
+  # review locally with ops/lan-preview.sh. See ops/netlify-ignore.sh.
   ignore  = "bash ../ops/netlify-ignore.sh"
 
 [build.environment]

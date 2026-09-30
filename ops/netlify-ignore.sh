@@ -6,8 +6,7 @@
 # 2026-09-30): previews are viewed locally with ops/lan-preview.sh, not built
 # on Netlify, and production skips pushes that cannot change the site.
 #
-#   Deploy previews: build only when the head commit message contains
-#                    [preview]  (e.g. `git commit --allow-empty -m "[preview]"`).
+#   Deploy previews: never built. Review locally with ops/lan-preview.sh.
 #   Production:      build only when src/ or netlify.toml changed since the
 #                    last deploy (docs, planning, ops-only pushes are skipped).
 #
@@ -16,14 +15,11 @@
 
 set -u
 
-if [ "${CONTEXT:-}" = "deploy-preview" ]; then
-  if git log -1 --pretty=%B "${COMMIT_REF:-HEAD}" 2>/dev/null | grep -qF "[preview]"; then
-    echo "netlify-ignore: [preview] requested - building."
-    exit 1
-  fi
-  echo "netlify-ignore: preview not requested (add [preview] to the commit message) - skipping."
-  exit 0
-fi
+case "${CONTEXT:-}" in
+  deploy-preview|branch-deploy)
+    echo "netlify-ignore: previews are viewed locally (ops/lan-preview.sh) - skipping."
+    exit 0 ;;
+esac
 
 if [ -z "${CACHED_COMMIT_REF:-}" ] || [ "${CACHED_COMMIT_REF}" = "${COMMIT_REF:-}" ]; then
   echo "netlify-ignore: no previous deploy to compare with - building."
