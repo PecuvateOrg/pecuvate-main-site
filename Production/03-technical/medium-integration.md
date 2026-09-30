@@ -1,5 +1,7 @@
 # Medium Integration
 
+> **Superseded 2026-09-30.** The site no longer reads from Medium. Posts live in the site as Markdown (`src/src/content/blog/`, an Astro content collection) and render at `/blog/`; the homepage "Thinking" section shows the latest three. Drafts are managed in the Notion Content Library and land here when published. Medium becomes a syndication channel pointing back to pecuvate.com. Kept below for history only.
+
 ## Purpose
 
 Define how Medium blog posts are fetched and displayed in the Thinking & Insights section.

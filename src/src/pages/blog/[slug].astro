@@ -1,0 +1,57 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogHeader from '@/components/BlogHeader.astro';
+import Footer from '@/components/Footer.astro';
+import { getPublishedPosts, formatDate } from '@/lib/blog';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { title, description, pubDate, updatedDate, author } = post.data;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: title,
+  description,
+  datePublished: pubDate.toISOString(),
+  ...(updatedDate && { dateModified: updatedDate.toISOString() }),
+  author: { '@type': 'Person', name: author },
+  publisher: { '@type': 'Organization', name: 'Pecuvate', url: 'https://pecuvate.com' },
+  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).toString(),
+};
+---
+
+<BaseLayout title={`${title} — Pecuvate`} description={description} ogType="article">
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <BlogHeader />
+  <main class="py-20">
+    <article class="w-full max-w-3xl mx-auto px-6">
+      <header class="mb-12">
+        <p class="text-xs text-ink-muted mb-4">
+          <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+          <span aria-hidden="true"> · </span>{author}
+        </p>
+        <h1 class="text-4xl font-semibold leading-tight text-ink-primary">{title}</h1>
+      </header>
+
+      <div class="prose prose-neutral max-w-none prose-headings:font-semibold prose-a:text-brand-orange">
+        <Content />
+      </div>
+
+      <footer class="mt-16 pt-8 border-t border-surface-subtle">
+        <p class="text-sm text-ink-muted leading-relaxed">
+          Written by {author}, founder of Pecuvate. Pecuvate invents solutions that improve, enable, or create new ways of
+          doing things through the combination of innovative thinking and intelligent application of technology.
+        </p>
+        <a href="/blog/" class="inline-block mt-6 text-sm text-brand-orange hover:underline">&larr; All thinking</a>
+      </footer>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>
