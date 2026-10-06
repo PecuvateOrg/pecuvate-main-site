@@ -2,6 +2,9 @@
   base    = "src"
   command = "pnpm run build"
   publish = "dist"
+  # Skip builds that cannot change the site, and never build PR/branch previews:
+  # review locally with ops/lan-preview.sh. See ops/netlify-ignore.sh.
+  ignore  = "bash ../ops/netlify-ignore.sh"
 
 [build.environment]
   NODE_VERSION = "22"
