@@ -8,7 +8,7 @@
 > above instead. See `NON-NEGOTIABLES.md` for what must never be committed here.
 
 ## Identity
-Astro static site — primary web presence for Pecuvate at `pecuvate.com`. Surfaces thought leadership via a Medium blog feed. Not a marketing site — a system made visible.
+Astro static site — primary web presence for Pecuvate at `pecuvate.com`. Hosts the Pecuvate blog at `/blog/` (Markdown posts in an Astro content collection). Not a marketing site — a system made visible.
 
 For Pecuvate's positioning, delivery modes, and entity descriptions to use in site copy — read the KB at `~/projects/vaults/PECUVATE`. Route to named pages, never to the vault generally:
 
@@ -42,7 +42,8 @@ CONTEXT.md.
 
 ## Cross-Workspace Flows
 
-- **Medium feed** — build-time RSS fetch baked into static HTML; no CMS or client-side loading
+- **Blog** — posts are Markdown in `src/src/content/blog/`, scoped to the Pecuvate Mission (see the KB's `synthesis/public-positioning.md`); drafts are managed in the Notion Content Library and land here when published. Medium is syndication only, with canonical links pointing back here
+- **Preview** — review locally with `bash ops/lan-preview.sh` (port 3102); Netlify never builds previews (`ops/netlify-ignore.sh`)
 - **Ecosystem links** — outbound links to Zenium Studios and Resorz project sites; keep URLs in a constants file, never hardcode inline
 
 ---
@@ -67,8 +68,8 @@ CONTEXT.md.
 |----------|--------|--------|
 | Framework | Astro | Content-focused static site; no application complexity |
 | Deployment | Netlify — `pecuvate.com` | Git-connected, no server to manage |
-| Page type | Single-page landing | Phase 1 presence; modular enough to grow |
-| Medium integration | Build-time RSS fetch | Static HTML — no CORS, no client-side loading |
+| Page type | Landing page + `/blog/` | Landing page for presence; blog for the founder's writing |
+| Blog | Astro content collection (Markdown in repo), RSS + sitemap | Owned, indexable, no third-party dependency; replaced the Medium RSS plan 2026-09-30 |
 | Design aesthetic | Systems-thinking, architectural | Mirrors Pecuvate's methodology |
 | Styling | Tailwind CSS | Agreed post-initial decisions |
 
