@@ -1,5 +1,16 @@
 # Pecuvate Main Site
 
+## About
+
+### What it is
+The public website at pecuvate.com, including the Pecuvate blog.
+
+### What it's for
+To be the front door: where people find out what Pecuvate does and read what it publishes. It is built to show the work, not just describe it.
+
+### How it works
+A fast static site (Astro). Blog posts are plain Markdown files in the repo; publishing a post means adding a file. Every push to `main` rebuilds and deploys the site.
+
 Astro static site — Pecuvate's primary web presence at [pecuvate.com](https://pecuvate.com). Introduces Pecuvate and the wider ecosystem (Zenium, Resorz) and surfaces thought leadership via a build-time Medium RSS feed. Not a marketing site — a system made visible: architectural tone, no "book a call" / growth-agency language.
 
 Copy and positioning are sourced from the Pecuvate KB (`~/projects/vaults/PECUVATE`), never hardcoded from imagination — see `CLAUDE.md` for the routing table.
