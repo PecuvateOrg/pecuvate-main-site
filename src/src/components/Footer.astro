@@ -3,7 +3,7 @@ const year = new Date().getFullYear();
 
 // TODO: Replace with approved values from Production/01-content/footer.md
 const email = 'hello@pecuvate.com';
-const linkedin = 'https://linkedin.com/company/pecuvate';
+import { socialLinks } from '../lib/social';
 ---
 
 <footer class="py-12 border-t border-surface-subtle">
@@ -15,13 +15,15 @@ const linkedin = 'https://linkedin.com/company/pecuvate';
     </p>
 
     <!-- Footer Links -->
-    <div class="flex gap-6 text-sm text-ink-muted">
+    <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm text-ink-muted">
       <a href={`mailto:${email}`} class="hover:text-ink-primary transition-colors duration-200">
         {email}
       </a>
-      <a href={linkedin} target="_blank" rel="noopener noreferrer" class="hover:text-ink-primary transition-colors duration-200">
-        LinkedIn
-      </a>
+      {socialLinks.map(({ label, href }) => (
+        <a href={href} target="_blank" rel="noopener noreferrer" class="hover:text-ink-primary transition-colors duration-200">
+          {label}
+        </a>
+      ))}
     </div>
 
   </div>
