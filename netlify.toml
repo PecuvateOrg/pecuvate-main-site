@@ -6,6 +6,13 @@
   # review locally with ops/lan-preview.sh. See ops/netlify-ignore.sh.
   ignore  = "bash ../ops/netlify-ignore.sh"
 
+# Policies live in LegalHub (Sanity); served here in place, same as empowrcic.org/legal/:slug
+[[redirects]]
+  from   = "/legal/:slug"
+  to     = "https://legalhub.pecuvate.com/share/pecuvate/org/:slug"
+  status = 200
+  force  = true
+
 [build.environment]
   NODE_VERSION = "22"
 
