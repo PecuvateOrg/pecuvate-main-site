@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" font-family="Poppins, system-ui, sans-serif"><title>Marketing: from broadcasting at an audience to a conversation with it</title><style>.l{fill:none;stroke:#1A1A1A;stroke-width:2}.m{fill:none;stroke:#8A8A8A;stroke-width:1.5}.d{stroke-dasharray:5 5}.o{fill:none;stroke:#F47C20;stroke-width:2.5}.of{fill:#F47C20}.k{fill:#1A1A1A}.t{font-size:15px;fill:#1A1A1A}.s{font-size:13px;fill:#6B6B6B}.h{font-size:12px;letter-spacing:2px;fill:#8A8A8A}</style><rect width="800" height="360" fill="#FFFFFF"/>
+<text x="60" y="56" class="h">BROADCAST</text><text x="460" y="56" class="h">CONVERSATION</text>
+<path class="l" d="M80 160h30l40-30v100l-40-30H80z"/><g class="m"><path d="M170 150q15 30 0 60"/><path d="M190 135q25 45 0 90"/><path d="M210 120q35 60 0 120"/></g>
+<g class="m"><circle cx="300" cy="120" r="10"/><circle cx="310" cy="180" r="10"/><circle cx="300" cy="240" r="10"/></g>
+<text x="200" y="310" class="s" text-anchor="middle">one-way, measured by volume</text>
+<path class="o" d="M372 180h56"/><path class="of" d="M436 180l-12-7v14z"/>
+<circle cx="600" cy="180" r="22" class="l"/>
+<g class="of"><circle cx="510" cy="110" r="10"/><circle cx="690" cy="110" r="10"/><circle cx="500" cy="250" r="10"/><circle cx="700" cy="250" r="10"/></g>
+<g class="o"><path d="M520 118l60 46M680 118l-60 46M510 242l70-50M690 242l-70-50"/><path d="M525 104q75-30 150 0"/><path d="M515 262q85 30 170 0"/></g>
+<text x="600" y="310" class="s" text-anchor="middle">community, feedback, shared values</text>
+</svg>

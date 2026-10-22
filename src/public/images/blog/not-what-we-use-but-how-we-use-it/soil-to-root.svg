@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" font-family="Poppins, system-ui, sans-serif"><title>Agriculture: from optimising the soil to optimising the root</title><style>.l{fill:none;stroke:#1A1A1A;stroke-width:2}.m{fill:none;stroke:#8A8A8A;stroke-width:1.5}.d{stroke-dasharray:5 5}.o{fill:none;stroke:#F47C20;stroke-width:2.5}.of{fill:#F47C20}.k{fill:#1A1A1A}.t{font-size:15px;fill:#1A1A1A}.s{font-size:13px;fill:#6B6B6B}.h{font-size:12px;letter-spacing:2px;fill:#8A8A8A}</style><rect width="800" height="360" fill="#FFFFFF"/>
+<text x="60" y="56" class="h">OPTIMISE THE SOIL</text><text x="460" y="56" class="h">OPTIMISE THE ROOT</text>
+<path class="l" d="M60 230h280"/><path class="m d" d="M60 250h280M60 270h280"/>
+<g class="l"><path d="M110 230v-60M110 190l-18-14M110 180l18-14"/><path d="M200 230v-80M200 175l-20-16M200 165l20-16"/><path d="M290 230v-50M290 200l-16-12"/></g>
+<circle cx="300" cy="100" r="18" class="m"/><path class="m" d="M300 70v-10M330 100h10M300 130v6M270 100h-10"/><path class="m d" d="M80 110c20-20 40 0 60-10"/>
+<text x="200" y="310" class="s" text-anchor="middle">quantity, left to weather and chance</text>
+<path class="o" d="M372 180h56"/><path class="of" d="M436 180l-12-7v14z"/>
+<rect x="470" y="80" width="260" height="190" class="l"/><path class="l" d="M470 200h260"/>
+<g class="l"><path d="M530 200v-70M530 155l-16-12M530 145l16-12"/><path d="M600 200v-70M600 155l-16-12M600 145l16-12"/><path d="M670 200v-70M670 155l-16-12M670 145l16-12"/></g>
+<g class="o"><path d="M530 200v40M520 225l10 15 10-15"/><path d="M600 200v40M590 225l10 15 10-15"/><path d="M670 200v40M660 225l10 15 10-15"/><path d="M490 100h220"/></g>
+<text x="600" y="310" class="s" text-anchor="middle">measured water, nutrients and light</text>
+</svg>
