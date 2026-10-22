@@ -11,6 +11,8 @@ originalUrl: "https://medium.com/@pecuvate.shaun/not-what-we-use-but-how-we-use-
 
 ### Reframing the Problem
 
+![The question shifts from which tool to use to how to rethink the problem](/images/blog/not-what-we-use-but-how-we-use-it/reframe.svg)
+
 The advancement of technology has profoundly reshaped the way we approach problem-solving. Capabilities that were unattainable only half a century ago are now commonplace, drastically improving our ability to connect, conduct global business, manage data, and learn efficiently.
 
 Technology **has, and will always, force us to rethink the way we operate.** In this current era, where a vast array of tools is readily available, the fundamental question is no longer, **“What technology can solve this problem?”** Instead, the imperative has shifted to, **“How can the problem now be completely reframed, and what new opportunities are now possible, due to the technology we possess?”**
@@ -20,6 +22,8 @@ We have the ability to revisit even age-old challenges and fundamentally change 
 #### 🌿 Overcoming Physical/Biological Constraints(Agriculture)
 
 The history of agriculture offers a compelling demonstration of this reframing.
+
+![Agriculture: from optimising the soil to optimising the root](/images/blog/not-what-we-use-but-how-we-use-it/soil-to-root.svg)
 
 For millennia, the practice was constrained by the **land’s natural capacity**. Farming was a seasonal, geographical negotiation based on understanding soil texture, regional climate, and water availability. The focus remained primarily on the **quantity** of the yield. Since farmers lacked control over the environmental variables, they compensated by maximizing planting volume and leaving the rest to chance. There was no guarantee of quality because the traditional system was inherently vulnerable to external factors.
 
@@ -31,6 +35,8 @@ By developing hydroponics and aeroponics, we eliminate the highly variable facto
 
 Technology has similarly reframed the problem of **workforce accessibility and organizational structure**.
 
+![Talent: from bringing people to one office to integrating talent wherever it is](/images/blog/not-what-we-use-but-how-we-use-it/hub-to-network.svg)
+
 The traditional problem of hiring was constrained by **geography**. To access talent, you needed a physical office, necessitating costly relocation packages, visa sponsorships, and limited, local recruitment efforts. The resulting organization was a fixed, often centralized hub. The problem was framed as, “How do we get the best talent to *our* location?”
 
 Today, digital collaboration platforms, cloud computing, and secure remote access have completely changed the equation. The geographical constraint has been rendered functionally obsolete. The problem is now reframed as: **“How do we seamlessly integrate the best talent, regardless of location, into our global operation?”**
@@ -40,6 +46,8 @@ This shift allows companies to access vast, diverse talent pools, operating acro
 #### 📣 Overcoming Communicative/Relational Constraints(Marketing)
 
 Even highly abstract fields like **marketing and advertisement** have been forced to reframe their core problems.
+
+![Marketing: from broadcasting at an audience to a conversation with it](/images/blog/not-what-we-use-but-how-we-use-it/broadcast-to-conversation.svg)
 
 Historically, the marketing problem was framed as **“How do we best broadcast our message to the largest possible audience?”** Agencies created one-way campaigns focused on messaging dominance and interruption. The consumer was a passive recipient, and success was measured by how loudly the message was shouted.
 

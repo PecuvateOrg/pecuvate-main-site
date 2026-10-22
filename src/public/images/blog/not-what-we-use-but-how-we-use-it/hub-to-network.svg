@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" role="img" font-family="Poppins, system-ui, sans-serif"><title>Talent: from bringing people to one office to integrating talent wherever it is</title><style>.l{fill:none;stroke:#1A1A1A;stroke-width:2}.m{fill:none;stroke:#8A8A8A;stroke-width:1.5}.d{stroke-dasharray:5 5}.o{fill:none;stroke:#F47C20;stroke-width:2.5}.of{fill:#F47C20}.k{fill:#1A1A1A}.t{font-size:15px;fill:#1A1A1A}.s{font-size:13px;fill:#6B6B6B}.h{font-size:12px;letter-spacing:2px;fill:#8A8A8A}</style><rect width="800" height="360" fill="#FFFFFF"/>
+<text x="60" y="56" class="h">TALENT TO OUR LOCATION</text><text x="460" y="56" class="h">TALENT WHEREVER IT IS</text>
+<rect x="170" y="150" width="60" height="60" class="l"/><text x="200" y="235" class="s" text-anchor="middle">office</text>
+<g class="m d"><path d="M80 100l85 55M320 100l-85 55M80 270l85-55M320 270l-85-55"/></g>
+<g class="m"><circle cx="72" cy="94" r="10"/><circle cx="328" cy="94" r="10"/><circle cx="72" cy="276" r="10"/><circle cx="328" cy="276" r="10"/></g>
+<text x="200" y="320" class="s" text-anchor="middle">relocate, sponsor, centralise</text>
+<path class="o" d="M372 180h56"/><path class="of" d="M436 180l-12-7v14z"/>
+<g class="o"><path d="M520 110L640 100L710 190L640 270L520 260L480 180Z"/><path d="M520 110L640 270M640 100L520 260M480 180L710 190"/></g>
+<g class="of"><circle cx="520" cy="110" r="8"/><circle cx="640" cy="100" r="8"/><circle cx="710" cy="190" r="8"/><circle cx="640" cy="270" r="8"/><circle cx="520" cy="260" r="8"/><circle cx="480" cy="180" r="8"/></g>
+<text x="600" y="320" class="s" text-anchor="middle">one operation, many locations</text>
+</svg>
