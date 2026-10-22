@@ -8,6 +8,7 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    sitemap(),
+    // Blog pages live on blog.pecuvate.com and have their own sitemap (pages/blog/sitemap.xml.ts).
+    sitemap({ filter: (page) => !page.includes('/blog/') }),
   ],
 });

@@ -3,7 +3,8 @@ import { render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import BlogHeader from '@/components/BlogHeader.astro';
 import Footer from '@/components/Footer.astro';
-import { getPublishedPosts, formatDate } from '@/lib/blog';
+import { getPublishedPosts, formatDate, postUrl, blogUrl, categoryUrl } from '@/lib/blog';
+import { getPillar, pillarLabel } from '@/lib/pillars';
 
 export async function getStaticPaths() {
   const posts = await getPublishedPosts();
@@ -12,7 +13,8 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const { title, description, pubDate, updatedDate, author } = post.data;
+const { title, description, pubDate, updatedDate, author, pillars } = post.data;
+const url = postUrl(post.id);
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -23,11 +25,11 @@ const jsonLd = {
   ...(updatedDate && { dateModified: updatedDate.toISOString() }),
   author: { '@type': 'Person', name: author },
   publisher: { '@type': 'Organization', name: 'Pecuvate', url: 'https://pecuvate.com' },
-  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).toString(),
+  mainEntityOfPage: url,
 };
 ---
 
-<BaseLayout title={`${title} — Pecuvate`} description={description} ogType="article">
+<BaseLayout title={`${title} — Pecuvate`} description={description} ogType="article" canonical={url}>
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <BlogHeader />
   <main class="py-20">
@@ -36,6 +38,9 @@ const jsonLd = {
         <p class="text-xs text-ink-muted mb-4">
           <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
           <span aria-hidden="true"> · </span>{author}
+          {pillars.map((slug) => (
+            <><span aria-hidden="true"> · </span><a href={categoryUrl(slug)} class="hover:text-brand-orange">{pillarLabel(getPillar(slug))}</a></>
+          ))}
         </p>
         <h1 class="text-4xl font-semibold leading-tight text-ink-primary">{title}</h1>
       </header>
@@ -49,7 +54,7 @@ const jsonLd = {
           Written by {author}, founder of Pecuvate. Pecuvate invents solutions that improve, enable, or create new ways of
           doing things through the combination of innovative thinking and intelligent application of technology.
         </p>
-        <a href="/blog/" class="inline-block mt-6 text-sm text-brand-orange hover:underline">&larr; All thinking</a>
+        <a href={blogUrl()} class="inline-block mt-6 text-sm text-brand-orange hover:underline">&larr; All thinking</a>
       </footer>
     </article>
   </main>

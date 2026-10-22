@@ -1,0 +1,36 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogHeader from '@/components/BlogHeader.astro';
+import PillarNav from '@/components/PillarNav.astro';
+import PostList from '@/components/PostList.astro';
+import Footer from '@/components/Footer.astro';
+import { getPublishedPosts, categoryUrl } from '@/lib/blog';
+import { getPillar, pillarLabel, type PillarSlug } from '@/lib/pillars';
+
+// Only categories with at least one post get a page.
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  const used = new Set(posts.flatMap((p) => p.data.pillars));
+  return [...used].map((slug) => ({
+    params: { slug },
+    props: { posts: posts.filter((p) => p.data.pillars.includes(slug)), used },
+  }));
+}
+
+const { posts, used } = Astro.props;
+const pillar = getPillar(Astro.params.slug as PillarSlug);
+const label = pillarLabel(pillar);
+---
+
+<BaseLayout title={`${label} — Pecuvate`} description={pillar.description} canonical={categoryUrl(pillar.slug)}>
+  <BlogHeader />
+  <main class="py-24">
+    <div class="w-full max-w-content mx-auto px-6">
+      <h1 class="text-4xl font-semibold mb-4 text-ink-primary">{label}</h1>
+      <p class="text-ink-muted max-w-2xl mb-10">{pillar.description}</p>
+      <PillarNav current={pillar.slug} used={used} />
+      <PostList posts={posts} />
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

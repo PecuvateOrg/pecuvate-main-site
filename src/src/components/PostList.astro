@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate, postUrl, categoryUrl } from '@/lib/blog';
+import { getPillar, pillarLabel } from '@/lib/pillars';
+
+interface Props {
+  posts: CollectionEntry<'blog'>[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ul class="divide-y divide-surface-subtle border-y border-surface-subtle">
+  {posts.map((post) => (
+    <li class="py-8">
+      <p class="text-xs text-ink-muted flex flex-wrap gap-x-3 gap-y-1">
+        <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+        {post.data.pillars.map((slug) => (
+          <a href={categoryUrl(slug)} class="hover:text-brand-orange">{pillarLabel(getPillar(slug))}</a>
+        ))}
+      </p>
+      <a href={postUrl(post.id)} class="group block">
+        <h2 class="text-xl font-semibold mt-2 mb-2 text-ink-primary group-hover:text-brand-orange transition-colors duration-200">
+          {post.data.title}
+        </h2>
+        <p class="text-sm text-ink-muted leading-relaxed max-w-3xl">{post.data.description}</p>
+      </a>
+    </li>
+  ))}
+</ul>

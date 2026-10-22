@@ -1,0 +1,22 @@
+---
+// Category links across the top of the blog index and category pages.
+import { pillars, pillarLabel } from '@/lib/pillars';
+import { blogUrl, categoryUrl } from '@/lib/blog';
+
+interface Props {
+  current?: string;
+  used: Set<string>;
+}
+
+const { current, used } = Astro.props;
+const linkClass = 'px-3 py-1.5 border text-xs transition-colors duration-200';
+const active = 'border-brand-orange text-brand-orange';
+const idle = 'border-surface-subtle text-ink-muted hover:text-ink-primary hover:border-ink-muted';
+---
+
+<nav aria-label="Categories" class="flex flex-wrap gap-2 mb-12">
+  <a href={blogUrl()} class={`${linkClass} ${current ? idle : active}`}>All</a>
+  {pillars.filter((p) => used.has(p.slug)).map((p) => (
+    <a href={categoryUrl(p.slug)} class={`${linkClass} ${current === p.slug ? active : idle}`}>{pillarLabel(p)}</a>
+  ))}
+</nav>

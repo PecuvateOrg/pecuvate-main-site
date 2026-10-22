@@ -4,6 +4,7 @@ const year = new Date().getFullYear();
 // TODO: Replace with approved values from Production/01-content/footer.md
 const email = 'enquiries@pecuvate.com';
 import { socialLinks } from '../lib/social';
+import { SITE_URL } from '../lib/blog';
 ---
 
 <footer class="py-12 border-t border-surface-subtle">
@@ -24,10 +25,10 @@ import { socialLinks } from '../lib/social';
           {label}
         </a>
       ))}
-      <a href="/legal/privacy-policy" class="hover:text-ink-primary transition-colors duration-200">
+      <a href={`${SITE_URL}/legal/privacy-policy`} class="hover:text-ink-primary transition-colors duration-200">
         Privacy
       </a>
-      <a href="/legal/terms-and-conditions" class="hover:text-ink-primary transition-colors duration-200">
+      <a href={`${SITE_URL}/legal/terms-and-conditions`} class="hover:text-ink-primary transition-colors duration-200">
         Terms
       </a>
     </div>

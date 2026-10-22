@@ -6,6 +6,51 @@
   # review locally with ops/lan-preview.sh. See ops/netlify-ignore.sh.
   ignore  = "bash ../ops/netlify-ignore.sh"
 
+# Blog: served at blog.pecuvate.com (a domain alias on this site) from the /blog/
+# pages in this build. Rules match top-down; the first match wins.
+[[redirects]]
+  from   = "https://blog.pecuvate.com/"
+  to     = "/blog/"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from   = "https://blog.pecuvate.com/blog/*"
+  to     = "https://blog.pecuvate.com/:splat"
+  status = 301
+  force  = true
+
+# Not forced: files that exist at the root (assets, /rss.xml) are served as they are.
+[[redirects]]
+  from   = "https://blog.pecuvate.com/*"
+  to     = "/blog/:splat"
+  status = 200
+
+# The blog's old home on pecuvate.com (live 2026-10-06 to the move) and its feed.
+[[redirects]]
+  from   = "https://www.pecuvate.com/blog/*"
+  to     = "https://blog.pecuvate.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "https://pecuvate.com/blog/*"
+  to     = "https://blog.pecuvate.com/:splat"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "https://www.pecuvate.com/rss.xml"
+  to     = "https://blog.pecuvate.com/rss.xml"
+  status = 301
+  force  = true
+
+[[redirects]]
+  from   = "https://pecuvate.com/rss.xml"
+  to     = "https://blog.pecuvate.com/rss.xml"
+  status = 301
+  force  = true
+
 # Policies live in LegalHub (Sanity); served here in place, same as empowrcic.org/legal/:slug
 [[redirects]]
   from   = "/legal/:slug"

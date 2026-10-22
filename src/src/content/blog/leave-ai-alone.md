@@ -2,6 +2,7 @@
 title: "Leave AI Alone!"
 description: "Somewhere between fascination and fear, we’ve made AI the scapegoat for everything that feels too easy, too fast, or too impersonal."
 pubDate: 2025-11-10
+pillars: [entrepreneur]
 author: "Shaun Barnett"
 originalUrl: "https://medium.com/@pecuvate.shaun/leave-ai-alone-578d76f1f5a9"
 ---
