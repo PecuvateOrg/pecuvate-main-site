@@ -2,6 +2,7 @@
 title: "Not What We Use — But How We Use It"
 description: " Rethinking The Way We Solve Problems Reframing the Problem The advancement of technology has profoundly reshaped the way we approach problem-solving."
 pubDate: 2025-11-13
+pillars: [entrepreneur]
 author: "Shaun Barnett"
 originalUrl: "https://medium.com/@pecuvate.shaun/not-what-we-use-but-how-we-use-it-57b833ffbeed"
 ---

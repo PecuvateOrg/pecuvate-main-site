@@ -2,6 +2,7 @@
 title: "The Misunderstanding of Speed: Why Startups Trip Over Their Own Momentum"
 description: "In the modern startup world, speed has become a mantra. We hear “move fast and break things,” “iterate quickly,” “fail fast.” But in the echo chamber of hustle culture, many founders have come to equate speed with rushing."
 pubDate: 2025-11-01
+pillars: [entrepreneur]
 author: "Shaun Barnett"
 originalUrl: "https://medium.com/@pecuvate.shaun/the-misunderstanding-of-speed-why-startups-trip-over-their-own-momentum-a4c4fb5e749f"
 ---

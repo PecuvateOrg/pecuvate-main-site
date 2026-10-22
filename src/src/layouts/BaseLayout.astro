@@ -1,19 +1,21 @@
 ---
 import '../styles/global.css';
+import { blogUrl } from '../lib/blog';
 
 interface Props {
   title?: string;
   description?: string;
   ogType?: 'website' | 'article';
+  // Blog pages pass their blog.pecuvate.com URL; other pages derive it from the path.
+  canonical?: string;
 }
 
 const {
   title = 'Pecuvate — Built on systems, not products.',
   ogType = 'website',
   description = 'Pecuvate builds solutions through the combined efforts of innovative thinking and the intelligent application of technology — designing the business model, then building the system that runs it.',
+  canonical = new URL(Astro.url.pathname, Astro.site).toString(),
 } = Astro.props;
-
-const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -29,7 +31,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonical} />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" type="application/rss+xml" title="Pecuvate — Thinking" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Pecuvate — Thinking" href={blogUrl('rss.xml')} />
 
     <title>{title}</title>
 

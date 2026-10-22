@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { pillarSlugs } from './lib/pillars';
 
 // Pecuvate blog. Scope: pieces on the Pecuvate Mission only — see the
 // public-positioning page in the Pecuvate KB. Source of truth for drafts is the
@@ -14,6 +15,8 @@ const blog = defineCollection({
     author: z.string().default('Shaun Barnett'),
     // Where the piece first appeared, if it was published elsewhere first.
     originalUrl: z.string().url().optional(),
+    // Optional categories (see lib/pillars.ts); a post may have none or several.
+    pillars: z.array(z.enum(pillarSlugs)).default([]),
     draft: z.boolean().default(false),
   }),
 });
