@@ -68,7 +68,7 @@ CONTEXT.md.
 |----------|--------|--------|
 | Framework | Astro | Content-focused static site; no application complexity |
 | Deployment | Netlify — `pecuvate.com` | Git-connected, no server to manage |
-| Page type | Landing page + `/blog/` | Landing page for presence; blog for the founder's writing |
+| Page type | Landing page + `/blog/` + `/kits/` | Landing page for presence; blog for the founder's writing; kits for product customers (shared agent-setup guide + one page per kit, generated from `src/src/lib/kits.ts`) — scope in the KB's `synthesis/public-positioning.md` § Kits surface |
 | Blog | Astro content collection (Markdown in repo), RSS + sitemap | Owned, indexable, no third-party dependency; replaced the Medium RSS plan 2026-09-30 |
 | Design aesthetic | Systems-thinking, architectural | Mirrors Pecuvate's methodology |
 | Styling | Tailwind CSS | Agreed post-initial decisions |
