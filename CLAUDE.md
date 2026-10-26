@@ -67,6 +67,7 @@ CONTEXT.md.
 | Decision | Choice | Reason |
 |----------|--------|--------|
 | Framework | Astro | Content-focused static site; no application complexity |
+| Role | Gateway, not a platform | Owner 2026-10-26: management platforms are built as separate Next.js apps; this site stays Astro and links out to them |
 | Deployment | Netlify — `pecuvate.com` | Git-connected, no server to manage |
 | Page type | Landing page + `/blog/` + `/kits/` | Landing page for presence; blog for the founder's writing; kits for product customers (shared agent-setup guide + one page per kit, generated from `src/src/lib/kits.ts`) — scope in the KB's `synthesis/public-positioning.md` § Kits surface |
 | Blog | Astro content collection (Markdown in repo), RSS + sitemap | Owned, indexable, no third-party dependency; replaced the Medium RSS plan 2026-09-30 |

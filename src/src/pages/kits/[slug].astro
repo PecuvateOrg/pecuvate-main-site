@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import BlogHeader from '@/components/BlogHeader.astro';
+import SiteHeader from '@/components/SiteHeader.astro';
 import Footer from '@/components/Footer.astro';
 import { kits, type Kit } from '@/lib/kits';
 
@@ -13,7 +13,7 @@ const [before, after] = kit.prompt.split('{name}');
 ---
 
 <BaseLayout title={`${kit.name} — Pecuvate`} description={kit.summary}>
-  <BlogHeader />
+  <SiteHeader />
   <main>
     <section class="py-24 border-b border-surface-subtle">
       <div class="w-full max-w-content mx-auto px-6">
