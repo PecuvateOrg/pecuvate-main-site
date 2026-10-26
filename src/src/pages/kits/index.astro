@@ -18,6 +18,7 @@ const setup = [
   {
     title: 'Choose an AI agent and sign up',
     body: 'Any of these works. Check the provider’s current plans when you sign up.',
+    showAgents: true,
   },
   {
     title: 'Install the agent’s extension',
@@ -67,7 +68,7 @@ const setup = [
                     {step.link.label}
                   </a>
                 )}
-                {i === 2 && (
+                {step.showAgents && (
                   <ul class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
                     {agents.map((agent) => (
                       <li class="p-6 border border-surface-subtle bg-surface">

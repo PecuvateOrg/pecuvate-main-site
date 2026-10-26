@@ -78,21 +78,18 @@ export const agents = [
     by: 'Anthropic',
     account: 'An Anthropic account on a paid Claude plan',
     signup: 'https://claude.ai',
-    extension: 'Claude Code',
   },
   {
     name: 'Codex',
     by: 'OpenAI',
     account: 'A ChatGPT account on a paid plan',
     signup: 'https://chatgpt.com',
-    extension: 'Codex',
   },
   {
     name: 'Gemini Code Assist',
     by: 'Google',
     account: 'A Google account',
     signup: 'https://codeassist.google',
-    extension: 'Gemini Code Assist',
   },
 ] as const;
 
