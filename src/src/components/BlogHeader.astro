@@ -1,14 +1,18 @@
 ---
 import { SITE_URL, blogUrl } from '@/lib/blog';
-// Slim header for blog pages — the homepage has no nav bar of its own.
+// Slim header for blog and kits pages — the homepage has no nav bar of its own.
+const onKits = Astro.url.pathname.startsWith('/kits');
 ---
 
 <header class="border-b border-surface-subtle">
   <div class="w-full max-w-content mx-auto px-6 py-5 flex items-center justify-between">
-    <a href={SITE_URL} class="flex items-center gap-3 text-ink-primary">
+    <a href={SITE_URL} class="flex min-h-[44px] items-center gap-3 text-ink-primary">
       <img src="/logo.png" alt="" width="32" height="32" />
       <span class="font-semibold">Pecuvate</span>
     </a>
-    <a href={blogUrl()} class="text-sm text-ink-muted hover:text-ink-primary transition-colors duration-200">Thinking</a>
+    <nav class="flex items-center gap-6">
+      <a href={`${SITE_URL}/kits/`} aria-current={onKits ? 'page' : undefined} class="inline-flex min-h-[44px] min-w-[44px] justify-center items-center text-sm text-ink-muted hover:text-ink-primary transition-colors duration-200">Kits</a>
+      <a href={blogUrl()} class="inline-flex min-h-[44px] items-center text-sm text-ink-muted hover:text-ink-primary transition-colors duration-200">Thinking</a>
+    </nav>
   </div>
 </header>
