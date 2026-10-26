@@ -1,0 +1,113 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogHeader from '@/components/BlogHeader.astro';
+import Footer from '@/components/Footer.astro';
+import { kits, agents, kitUrl } from '@/lib/kits';
+
+const setup = [
+  {
+    title: 'Install VS Code',
+    body: 'A free editor from Microsoft. It’s where your agent works and where the kit’s files live.',
+    link: { href: 'https://code.visualstudio.com', label: 'code.visualstudio.com' },
+  },
+  {
+    title: 'Install Git',
+    body: 'Your agent uses it to download a kit. On Windows, install it from git-scm.com and accept the defaults. On a Mac, open Terminal, type git --version and press Enter: if Git isn’t there, the Mac offers to install it.',
+    link: { href: 'https://git-scm.com/downloads', label: 'git-scm.com' },
+  },
+  {
+    title: 'Choose an AI agent and sign up',
+    body: 'Any of these works. Check the provider’s current plans when you sign up.',
+    showAgents: true,
+  },
+  {
+    title: 'Install the agent’s extension',
+    body: 'In VS Code, open Extensions (the four-squares icon on the left), search for the agent’s name, click Install, and sign in when it asks.',
+  },
+  {
+    title: 'Open an empty folder',
+    body: 'Make a new folder for the kit, for example Documents/my-company-books, and open it in VS Code with File → Open Folder. Then open the agent’s chat panel.',
+  },
+];
+---
+
+<BaseLayout
+  title="Kits — Pecuvate"
+  description="Kits are working systems an AI agent sets up on your own computer. Get your agent ready once, then paste one message to install any kit."
+>
+  <BlogHeader />
+  <main>
+    <section class="py-24 border-b border-surface-subtle">
+      <div class="w-full max-w-content mx-auto px-6">
+        <h1 class="text-4xl font-semibold mb-4 text-ink-primary">Kits</h1>
+        <p class="text-ink-muted max-w-2xl leading-relaxed">
+          A kit is a working system, written as instructions an AI agent follows on your own computer. You get your
+          agent ready once, paste one message, and the agent does the setting up. Your data stays with you.
+        </p>
+      </div>
+    </section>
+
+    <section id="setup" class="py-24 border-b border-surface-subtle bg-white" aria-labelledby="setup-heading">
+      <div class="w-full max-w-content mx-auto px-6">
+        <h2 id="setup-heading" class="text-3xl font-semibold mb-4 text-ink-primary">Get your agent ready</h2>
+        <p class="text-ink-muted max-w-2xl mb-16 leading-relaxed">
+          Once, about fifteen minutes. Every kit starts from here.
+        </p>
+
+        <ol class="space-y-10 max-w-3xl">
+          {setup.map((step, i) => (
+            <li class="grid grid-cols-[3rem_1fr] gap-6">
+              <span class="flex h-12 w-12 items-center justify-center border border-ink-primary font-semibold text-ink-primary" aria-hidden="true">
+                {i + 1}
+              </span>
+              <div>
+                <h3 class="text-lg font-semibold mb-2 text-ink-primary">{step.title}</h3>
+                <p class="text-ink-muted leading-relaxed">{step.body}</p>
+                {step.link && (
+                  <a href={step.link.href} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[44px] items-center text-ink-primary underline underline-offset-4 hover:text-ink-muted">
+                    {step.link.label}
+                  </a>
+                )}
+                {step.showAgents && (
+                  <ul class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {agents.map((agent) => (
+                      <li class="p-6 border border-surface-subtle bg-surface">
+                        <p class="font-semibold text-ink-primary">{agent.name}</p>
+                        <p class="text-sm text-ink-muted mb-3">by {agent.by}</p>
+                        <p class="text-sm text-ink-muted mb-3">{agent.account}</p>
+                        <a href={agent.signup} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[44px] items-center text-sm text-ink-primary underline underline-offset-4 hover:text-ink-muted">
+                          Sign up<span class="sr-only"> for {agent.name}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-surface-subtle" aria-labelledby="kits-heading">
+      <div class="w-full max-w-content mx-auto px-6">
+        <h2 id="kits-heading" class="text-3xl font-semibold mb-4 text-ink-primary">Choose a kit</h2>
+        <p class="text-ink-muted max-w-2xl mb-16 leading-relaxed">
+          Each kit’s page has the one message to paste into your agent’s chat.
+        </p>
+        <ul class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {kits.map((kit) => (
+            <li class="p-8 border border-surface-subtle bg-white flex flex-col">
+              <h3 class="text-lg font-semibold mb-3 text-ink-primary">{kit.name}</h3>
+              <p class="text-ink-muted text-sm leading-relaxed mb-6">{kit.summary}</p>
+              <a href={kitUrl(kit.slug)} class="mt-auto inline-flex min-h-[44px] items-center justify-center px-6 border border-ink-primary text-ink-primary font-medium hover:bg-ink-primary hover:text-white transition-colors duration-200">
+                Get the {kit.name.toLowerCase()}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

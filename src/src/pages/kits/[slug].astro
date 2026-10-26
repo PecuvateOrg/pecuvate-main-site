@@ -1,0 +1,120 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import BlogHeader from '@/components/BlogHeader.astro';
+import Footer from '@/components/Footer.astro';
+import { kits, type Kit } from '@/lib/kits';
+
+export function getStaticPaths() {
+  return kits.map((kit) => ({ params: { slug: kit.slug }, props: { kit } }));
+}
+
+const { kit } = Astro.props as { kit: Kit };
+const [before, after] = kit.prompt.split('{name}');
+---
+
+<BaseLayout title={`${kit.name} — Pecuvate`} description={kit.summary}>
+  <BlogHeader />
+  <main>
+    <section class="py-24 border-b border-surface-subtle">
+      <div class="w-full max-w-content mx-auto px-6">
+        <a href="/kits/" class="inline-flex min-h-[44px] items-center text-sm text-ink-muted hover:text-ink-primary mb-6">← All kits</a>
+        <h1 class="text-4xl font-semibold mb-4 text-ink-primary">{kit.name}</h1>
+        <p class="text-ink-muted max-w-2xl leading-relaxed">{kit.summary}</p>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-surface-subtle bg-white" aria-labelledby="install-heading">
+      <div class="w-full max-w-content mx-auto px-6"><div class="max-w-3xl">
+        <h2 id="install-heading" class="text-3xl font-semibold mb-4 text-ink-primary">Install it</h2>
+        <p class="text-ink-muted mb-10 leading-relaxed">
+          First, <a href="/kits/#setup" class="text-ink-primary underline underline-offset-4">get your agent ready</a> if you haven’t already.
+          Then, with an empty folder open in VS Code, paste this into the agent’s chat:
+        </p>
+
+        <div class="kit-prompt" data-before={before} data-after={after}>
+          <label for="kit-name" class="block text-sm font-medium text-ink-primary mb-2">{kit.promptField.label}</label>
+          <input id="kit-name" type="text" autocomplete="organization" placeholder={kit.promptField.placeholder}
+            class="w-full min-h-[44px] px-4 border border-brand-gray bg-white text-ink-primary mb-6" />
+          <pre class="whitespace-pre-wrap break-words p-6 bg-surface border border-surface-subtle text-sm leading-relaxed text-ink-primary font-mono"><code>{before}<span class="kit-name-slot">{kit.promptField.placeholder}</span>{after}</code></pre>
+          <div class="flex flex-col sm:flex-row gap-4 mt-6">
+            <button type="button" class="kit-copy inline-flex min-h-[44px] items-center justify-center px-8 border border-ink-primary bg-ink-primary text-white font-medium hover:bg-white hover:text-ink-primary transition-colors duration-200">
+              Copy message
+            </button>
+            <a href={kit.repo} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[44px] items-center justify-center px-8 border border-ink-primary text-ink-primary font-medium hover:bg-ink-primary hover:text-white transition-colors duration-200">
+              View on GitHub
+            </a>
+          </div>
+          <p class="kit-copied text-sm text-ink-muted mt-3 min-h-[1.5rem]" role="status" aria-live="polite"></p>
+        </div>
+
+        <h3 class="text-lg font-semibold mt-16 mb-4 text-ink-primary">This kit also needs</h3>
+        <ul class="space-y-4">
+          {kit.needs.map((need) => (
+            <li>
+              <p class="font-medium text-ink-primary">
+                {need.href ? <a href={need.href} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[44px] items-center underline underline-offset-4">{need.label}</a> : need.label}
+              </p>
+              <p class="text-ink-muted text-sm leading-relaxed">{need.detail}</p>
+            </li>
+          ))}
+        </ul>
+      </div></div>
+    </section>
+
+    <section class="py-24 border-b border-surface-subtle" aria-labelledby="next-heading">
+      <div class="w-full max-w-content mx-auto px-6">
+        <h2 id="next-heading" class="text-3xl font-semibold mb-16 text-ink-primary">What happens next</h2>
+        <ol class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {kit.steps.map((step, i) => (
+            <li class="p-8 border border-surface-subtle bg-white">
+              <p class="text-sm text-ink-muted mb-2">Step {i + 1}</p>
+              <h3 class="text-lg font-semibold mb-3 text-ink-primary">{step.title}</h3>
+              <p class="text-ink-muted text-sm leading-relaxed">{step.body}</p>
+            </li>
+          ))}
+        </ol>
+        <h3 class="text-lg font-semibold mb-4 text-ink-primary">What you do</h3>
+        <ul class="list-disc pl-6 space-y-2 text-ink-muted max-w-2xl">
+          {kit.youDo.map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-surface-subtle bg-white" aria-labelledby="notes-heading">
+      <div class="w-full max-w-content mx-auto px-6"><div class="max-w-3xl">
+        <h2 id="notes-heading" class="text-3xl font-semibold mb-10 text-ink-primary">Good to know</h2>
+        <div class="space-y-6 text-ink-muted leading-relaxed">
+          {kit.notes.map((note) => <p>{note}</p>)}
+          <p>
+            Questions about the kit itself, such as installing it or how a step works, go on the kit’s
+            <a href={`${kit.repo}/issues`} target="_blank" rel="noopener noreferrer" class="text-ink-primary underline underline-offset-4">GitHub issues</a>.
+            We can’t look at or advise on your figures.
+          </p>
+        </div>
+      </div></div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.kit-prompt').forEach((box) => {
+    const input = box.querySelector<HTMLInputElement>('input')!;
+    const slot = box.querySelector<HTMLElement>('.kit-name-slot')!;
+    const status = box.querySelector<HTMLElement>('.kit-copied')!;
+    const message = () => `${box.dataset.before}${slot.textContent}${box.dataset.after}`;
+
+    input.addEventListener('input', () => {
+      slot.textContent = input.value.trim() || input.placeholder;
+    });
+
+    box.querySelector('.kit-copy')!.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(message());
+        status.textContent = input.value.trim() ? 'Copied. Paste it into your agent’s chat.' : 'Copied. Replace “' + input.placeholder + '” with your company’s name before sending.';
+      } catch {
+        status.textContent = 'Couldn’t copy automatically: select the message above and copy it.';
+      }
+    });
+  });
+</script>
