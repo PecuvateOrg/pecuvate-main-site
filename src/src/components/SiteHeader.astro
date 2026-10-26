@@ -1,6 +1,6 @@
 ---
 import { SITE_URL, blogUrl } from '@/lib/blog';
-// Slim header for blog and kits pages — the homepage has no nav bar of its own.
+// Site-wide header — logo + nav on the homepage, blog and kits pages.
 const onKits = Astro.url.pathname.startsWith('/kits');
 ---
 
@@ -12,7 +12,7 @@ const onKits = Astro.url.pathname.startsWith('/kits');
     </a>
     <nav class="flex items-center gap-6">
       <a href={`${SITE_URL}/kits/`} aria-current={onKits ? 'page' : undefined} class="inline-flex min-h-[44px] min-w-[44px] justify-center items-center text-sm text-ink-muted hover:text-ink-primary transition-colors duration-200">Kits</a>
-      <a href={blogUrl()} class="inline-flex min-h-[44px] items-center text-sm text-ink-muted hover:text-ink-primary transition-colors duration-200">Thinking</a>
+      <a href={blogUrl()} class="inline-flex min-h-[44px] items-center text-sm text-ink-muted hover:text-ink-primary transition-colors duration-200">Blog</a>
     </nav>
   </div>
 </header>

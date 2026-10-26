@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import BlogHeader from '@/components/BlogHeader.astro';
+import SiteHeader from '@/components/SiteHeader.astro';
 import PillarNav from '@/components/PillarNav.astro';
 import PostList from '@/components/PostList.astro';
 import Footer from '@/components/Footer.astro';
@@ -23,7 +23,7 @@ const label = pillarLabel(pillar);
 ---
 
 <BaseLayout title={`${label} — Pecuvate`} description={pillar.description} canonical={categoryUrl(pillar.slug)}>
-  <BlogHeader />
+  <SiteHeader />
   <main class="py-24">
     <div class="w-full max-w-content mx-auto px-6">
       <h1 class="text-4xl font-semibold mb-4 text-ink-primary">{label}</h1>
