@@ -18,7 +18,7 @@ The landing page should visually embody the systems-thinking approach that defin
 **Content Elements**:
 - Pecuvate wordmark/logo
 - Core positioning statement — derive from KB: `overview/positioning.md` (vision + tagline)
-- Brief subtitle — derive from KB: `entities/pecuvate.md` (What Pecuvate Is)
+- Brief subtitle — derive from KB: `identity/pecuvate.md` (What Pecuvate Is)
 - Visual treatment that suggests structure and systems
 
 **Tone**: Clear, confident, architectural
@@ -33,7 +33,7 @@ The landing page should visually embody the systems-thinking approach that defin
 **Purpose**: Explain the OS model in accessible terms
 
 **Content Elements**:
-- Derive from KB: `entities/pecuvate.md` → "How Pecuvate Operates Externally" (three delivery modes + flywheel)
+- Derive from KB: `identity/pecuvate.md` → "How Pecuvate Operates Externally" (three delivery modes + flywheel)
 - Visual representation of the three modes and how they form a flywheel
 
 **Tone**: Educational but not academic, systematic without being cold
@@ -50,9 +50,9 @@ The landing page should visually embody the systems-thinking approach that defin
 
 **Content Elements**:
 - The three commercial entities: Pecuvate, Zenium, Resorz — derive roles from their respective KBs:
-  - Pecuvate: `~/projects/vaults/PECUVATE/entities/pecuvate.md`
+  - Pecuvate: `~/projects/Pecuvate/company/identity/pecuvate.md`
   - Resorz: `~/projects/vaults/RESORZ/entities/resorz.md`
-  - Zenium: `~/projects/vaults/PECUVATE/entities/zenium.md` — the Zenium vault is scaffolded but has no content yet, so the Pecuvate vault currently holds the authoritative Zenium record. Note its mission there is still **draft**. The name is always *Zenium*, never "Xenium".
+  - Zenium: `~/projects/Pecuvate/company/sources/former-vault-entities/zenium.md` — the old Pecuvate-vault record, kept as a source until the Zenium KB takes it over. Its mission is still **draft**. The name is always *Zenium*, never "Xenium".
 - Visual connection between the three (suggesting ecosystem, not hierarchy)
 
 **Tone**: Interconnected, purposeful
