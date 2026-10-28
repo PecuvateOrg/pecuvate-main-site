@@ -10,14 +10,14 @@
 ## Identity
 Astro static site — primary web presence for Pecuvate at `pecuvate.com`. Hosts the Pecuvate blog at `/blog/` (Markdown posts in an Astro content collection). Not a marketing site — a system made visible.
 
-For Pecuvate's positioning, delivery modes, and entity descriptions to use in site copy — read the KB at `~/projects/vaults/PECUVATE`. Route to named pages, never to the vault generally:
+For Pecuvate's positioning, delivery modes, and entity descriptions to use in site copy — read the KB at `~/projects/Pecuvate/company`. Route to named pages, never to the vault generally:
 
 | Need | Read |
 |---|---|
-| Public-facing copy, external messaging | `synthesis/public-positioning.md` |
-| Brand voice and tone | `synthesis/positioning.md` |
-| What Pecuvate is | `entities/pecuvate.md` |
-| Delivery modes | `concepts/three-modes.md` |
+| Public-facing copy, external messaging | `operations/public-positioning.md` |
+| Brand voice and tone | `identity/positioning.md` |
+| What Pecuvate is | `identity/pecuvate.md` |
+| Delivery modes | `identity/three-modes.md` |
 | Ecosystem entities (Zenium, Resorz, Empowr) | `entities/<name>.md` |
 
 The KB is the single source of truth — never restate entity identity in site copy or in this repo's files.
@@ -42,7 +42,7 @@ CONTEXT.md.
 
 ## Cross-Workspace Flows
 
-- **Blog** — posts are Markdown in `src/src/content/blog/`, scoped to the Pecuvate Mission (see the KB's `synthesis/public-positioning.md`); drafts are managed in the Notion Content Library and land here when published. Medium is syndication only, with canonical links pointing back here
+- **Blog** — posts are Markdown in `src/src/content/blog/`, scoped to the Pecuvate Mission (see the KB's `operations/public-positioning.md`); drafts are managed in the Notion Content Library and land here when published. Medium is syndication only, with canonical links pointing back here
 - **Preview** — review locally with `bash ops/lan-preview.sh` (port 3102); Netlify never builds previews (`ops/netlify-ignore.sh`)
 - **Ecosystem links** — outbound links to Zenium Studios and Resorz project sites; keep URLs in a constants file, never hardcode inline
 
@@ -69,7 +69,7 @@ CONTEXT.md.
 | Framework | Astro | Content-focused static site; no application complexity |
 | Role | Gateway, not a platform | Owner 2026-10-26: management platforms are built as separate Next.js apps; this site stays Astro and links out to them |
 | Deployment | Netlify — `pecuvate.com` | Git-connected, no server to manage |
-| Page type | Landing page + `/blog/` + `/kits/` | Landing page for presence; blog for the founder's writing; kits for product customers (shared agent-setup guide + one page per kit, generated from `src/src/lib/kits.ts`) — scope in the KB's `synthesis/public-positioning.md` § Kits surface |
+| Page type | Landing page + `/blog/` + `/kits/` | Landing page for presence; blog for the founder's writing; kits for product customers (shared agent-setup guide + one page per kit, generated from `src/src/lib/kits.ts`) — scope in the KB's `operations/public-positioning.md` § Kits surface |
 | Blog | Astro content collection (Markdown in repo), RSS + sitemap | Owned, indexable, no third-party dependency; replaced the Medium RSS plan 2026-09-30 |
 | Design aesthetic | Systems-thinking, architectural | Mirrors Pecuvate's methodology |
 | Styling | Tailwind CSS | Agreed post-initial decisions |

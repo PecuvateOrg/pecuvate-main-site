@@ -2,7 +2,7 @@
 
 **Status:** DRAFT — for founder review. Not yet absorbed into the KB.
 **Created:** 2026-07-22
-**Sources:** `~/projects/vaults/PECUVATE/` — `synthesis/positioning.md`, `entities/pecuvate.md`, `entities/bfg-alliance.md`, `concepts/three-modes.md`, `concepts/pecuvate-os.md`, `synthesis/goals.md`, `synthesis/roadmap.md`
+**Sources:** `~/projects/Pecuvate/company/` — `identity/positioning.md`, `identity/pecuvate.md`, BFG KB `entities/bfg-alliance.md`, `identity/three-modes.md`, `identity/pecuvate-os.md`, `growth/goals.md`, `growth/roadmap.md`
 **Absorption path:** once approved, this becomes `synthesis/public-positioning.md` in the PECUVATE vault (+ index row + log entry), and it governs all public-facing Pecuvate copy from then on. It resolves roadmap open questions #2 (narrative order per audience) and #3 (portfolio as proof without reduction) for the website surface.
 
 ---
@@ -20,10 +20,10 @@ The 2026-07-21 copy pass correctly removed the stale "venture studio" framing bu
 
 The external layer is not new invention — it is assembled from what the KB already says:
 
-- Group mission (`entities/bfg-alliance.md`): *"…through innovative thinking and the strategic application of technology."*
-- Three Pillars (`synthesis/positioning.md`): Innovative Thinking → Technological Application → Endurance.
-- Market positioning (`synthesis/positioning.md`): *"a business model architect for organisations with systemic constraints"* … *"Architect — designs, then partners to build."*
-- Explicitly NOT (`synthesis/positioning.md`): a traditional management consultancy.
+- Group mission (BFG KB `entities/bfg-alliance.md`): *"…through innovative thinking and the strategic application of technology."*
+- Three Pillars (`identity/positioning.md`): Innovative Thinking → Technological Application → Endurance.
+- Market positioning (`identity/positioning.md`): *"a business model architect for organisations with systemic constraints"* … *"Architect — designs, then partners to build."*
+- Explicitly NOT (`identity/positioning.md`): a traditional management consultancy.
 
 ## The site's job
 
@@ -68,7 +68,7 @@ All three revised against the founder directive (implement-and-build, not consul
 >
 > Pecuvate questions how a problem is meant to be solved, then architects the business model and builds the technology that solves it — and keeps it solved.
 
-- **Source:** the approved tagline in `synthesis/positioning.md`, verbatim; problem-first philosophy (*"How could this problem be better solved?"*).
+- **Source:** the approved tagline in `identity/positioning.md`, verbatim; problem-first philosophy (*"How could this problem be better solved?"*).
 - **Why it works:** already-approved brand language; the think→build pairing is the founder's own framing; shortest and most memorable.
 - **Risk:** tagline-as-headline can read generic if the subtitle doesn't carry the specificity — the subtitle is load-bearing here.
 
