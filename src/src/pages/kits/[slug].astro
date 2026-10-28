@@ -93,6 +93,22 @@ const [before, after] = kit.prompt.split('{name}');
         </div>
       </div></div>
     </section>
+
+    {kit.fingerprint && (
+      <section class="py-24 border-b border-surface-subtle" aria-labelledby="verify-heading">
+        <div class="w-full max-w-content mx-auto px-6"><div class="max-w-3xl">
+          <h2 id="verify-heading" class="text-3xl font-semibold mb-6 text-ink-primary">Check your copy is genuine</h2>
+          <div class="space-y-6 text-ink-muted leading-relaxed">
+            <p>
+              Every release is signed by Pecuvate. Your agent checks the signature after each download, using
+              the steps in the kit’s <code class="text-ink-primary">VERIFY.md</code>. The key it checks against must have this fingerprint:
+            </p>
+            <p class="font-mono text-sm text-ink-primary break-all bg-white border border-surface-subtle rounded px-4 py-3">{kit.fingerprint}</p>
+            <p>If your copy shows a different fingerprint, it has been changed by someone else: don’t use it.</p>
+          </div>
+        </div></div>
+      </section>
+    )}
   </main>
   <Footer />
 </BaseLayout>

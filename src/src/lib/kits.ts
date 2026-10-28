@@ -15,6 +15,9 @@ export interface Kit {
   steps: { title: string; body: string }[];
   youDo: string[];
   notes: string[];
+  // Release-signing key fingerprint (standard: one Pecuvate key for every product). A copy whose
+  // allowed_signers shows a different fingerprint has been altered.
+  fingerprint?: string;
 }
 
 export const kits: Kit[] = [
@@ -67,8 +70,9 @@ export const kits: Kit[] = [
     notes: [
       'Everything runs on your computer. Your figures stay in a folder there and never reach Pecuvate. Keep that folder private: back it up somewhere private, never to a public repository.',
       'This is software, not an accountancy service and not tax advice. The agent prepares and checks; you, as director, are responsible for the accounts and returns, and nothing is filed without your approval.',
-      'Not covered yet: companies with fixed assets to claim capital allowances on, periods longer than 12 months, and anything above micro-entity size. The agent says so and stops.',
+      'Not covered yet: VAT returns, payroll, companies with fixed assets to claim capital allowances on, periods longer than 12 months, and anything above micro-entity size. The agent says so and stops.',
     ],
+    fingerprint: 'SHA256:mZvW7xg+DdYLjGmvjCH4s+9k5rvA3DOvi1hcCRvKlsg',
   },
 ];
 
