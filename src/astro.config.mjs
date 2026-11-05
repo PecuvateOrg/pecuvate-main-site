@@ -3,6 +3,7 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
+  compressHTML: false, // Astro 7 strips spaces between inline elements otherwise
   site: 'https://pecuvate.com',
   integrations: [
     tailwind({
