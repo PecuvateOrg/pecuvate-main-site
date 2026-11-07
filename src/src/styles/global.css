@@ -11,6 +11,10 @@
     @apply bg-surface text-ink-primary font-sans;
   }
 
+  h1, h2, h3 {
+    @apply font-display;
+  }
+
   /* Consistent focus ring for accessibility */
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-brand-orange;
