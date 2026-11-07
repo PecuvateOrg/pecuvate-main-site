@@ -1,0 +1,60 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SiteHeader from '@/components/SiteHeader.astro';
+import Connect from '@/components/Connect.astro';
+import Footer from '@/components/Footer.astro';
+import { postUrl } from '@/lib/blog';
+
+const principles = [
+  { label: 'Innovative thinking', description: 'Most people accept how things work. We ask why they work that way, and how the problem could be approached completely differently.' },
+  { label: 'The right resource', description: 'We don’t start with a tool. We find the right solution for the task, then the right resource for the solution, whether that’s software, automation, AI or a better process.' },
+  { label: 'Built to last', description: 'A solution should keep working without constant attention, pay its way, and stay relevant as things change.' },
+];
+---
+
+<BaseLayout title="About — Pecuvate" description="Pecuvate’s mission and philosophy: inventing solutions that improve, enable or create new ways of doing things.">
+  <SiteHeader />
+  <main>
+
+    <section class="py-24 border-b border-surface-subtle">
+      <div class="w-full max-w-3xl mx-auto px-6">
+        <p class="text-xs font-medium uppercase tracking-wider text-brand-orange mb-3">About Pecuvate</p>
+        <h1 class="text-4xl md:text-5xl font-semibold leading-tight text-balance text-ink-primary">Not What You Use But How You Use It.</h1>
+        <p class="mt-6 text-lg text-ink-muted leading-relaxed">Technology keeps changing what is possible. The question is no longer which tool can solve a problem, but how the problem itself can be rethought now that so much is within reach.</p>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-surface-subtle bg-white">
+      <div class="w-full max-w-3xl mx-auto px-6">
+        <h2 class="text-xs font-medium uppercase tracking-wider text-ink-muted mb-4">Our mission</h2>
+        <p class="text-2xl md:text-3xl font-semibold leading-snug text-ink-primary text-balance">To invent solutions that improve, enable, or create new ways of doing things through the combination of innovative thinking and intelligent application of technology.</p>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-surface-subtle">
+      <div class="w-full max-w-content mx-auto px-6">
+        <h2 class="text-3xl font-semibold mb-4 text-ink-primary">Our philosophy</h2>
+        <p class="text-ink-muted max-w-2xl mb-12 leading-relaxed">Three ideas sit behind everything we make.</p>
+        <div class="grid gap-8 md:grid-cols-3">
+          {principles.map((p) => (
+            <div class="border-t-2 border-brand-orange pt-6">
+              <h3 class="text-lg font-semibold mb-2 text-ink-primary">{p.label}</h3>
+              <p class="text-ink-muted text-sm leading-relaxed">{p.description}</p>
+            </div>
+          ))}
+        </div>
+        <a href={postUrl('not-what-we-use-but-how-we-use-it')} class="mt-12 inline-flex min-h-[44px] items-center text-sm text-brand-orange hover:underline">Read: Not What We Use — But How We Use It &rarr;</a>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-surface-subtle bg-white">
+      <div class="w-full max-w-3xl mx-auto px-6">
+        <h2 class="text-xs font-medium uppercase tracking-wider text-ink-muted mb-4">Our vision</h2>
+        <p class="text-2xl md:text-3xl font-semibold leading-snug text-ink-primary text-balance">A world where technological progress works to support the sustainable growth and development of humanity.</p>
+      </div>
+    </section>
+
+    <Connect />
+  </main>
+  <Footer />
+</BaseLayout>
