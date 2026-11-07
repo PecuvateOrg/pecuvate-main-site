@@ -21,7 +21,6 @@ export default {
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
-        display: ['Bricolage Grotesque', 'Plus Jakarta Sans', 'sans-serif'],
       },
       spacing: {
         '18': '4.5rem',
