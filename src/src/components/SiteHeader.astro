@@ -1,8 +1,9 @@
 ---
 import { SITE_URL, blogUrl } from '@/lib/blog';
-// Site-wide header — logo + nav on the homepage, blog and kits pages.
+import { GEARS, gearsUrl } from '@/lib/gears';
+// Site-wide header — logo + nav on the homepage, blog and gears pages.
 const onAbout = Astro.url.pathname.startsWith('/about');
-const onKits = Astro.url.pathname.startsWith('/kits');
+const onGears = Astro.url.pathname.startsWith(gearsUrl());
 ---
 
 <header class="border-b border-surface-subtle">
@@ -13,7 +14,7 @@ const onKits = Astro.url.pathname.startsWith('/kits');
     </a>
     <nav class="flex items-center gap-6">
       <a href={`${SITE_URL}/about/`} aria-current={onAbout ? 'page' : undefined} class="inline-flex min-h-[44px] items-center text-sm text-ink-muted hover:text-ink-primary transition-colors duration-200">About</a>
-      <a href={`${SITE_URL}/kits/`} aria-current={onKits ? 'page' : undefined} class="inline-flex min-h-[44px] min-w-[44px] justify-center items-center text-sm text-ink-muted hover:text-ink-primary transition-colors duration-200">Kits</a>
+      <a href={`${SITE_URL}${gearsUrl()}`} aria-current={onGears ? 'page' : undefined} class="inline-flex min-h-[44px] min-w-[44px] justify-center items-center text-sm text-ink-muted hover:text-ink-primary transition-colors duration-200">{GEARS.plural}</a>
       <a href={blogUrl()} class="inline-flex min-h-[44px] items-center text-sm text-ink-muted hover:text-ink-primary transition-colors duration-200">Blog</a>
     </nav>
   </div>

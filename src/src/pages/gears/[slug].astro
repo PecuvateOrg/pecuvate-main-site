@@ -1,0 +1,59 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SiteHeader from '@/components/SiteHeader.astro';
+import Footer from '@/components/Footer.astro';
+import { GEARS, gears, gearsUrl, type Gear } from '@/lib/gears';
+
+export function getStaticPaths() {
+  return gears.map((gear) => ({ params: { slug: gear.slug }, props: { gear } }));
+}
+
+const { gear } = Astro.props as { gear: Gear };
+const title = `${gear.name} ${GEARS.singular}`;
+---
+
+<BaseLayout title={`${title} — Pecuvate`} description={gear.summary}>
+  <SiteHeader />
+  <main>
+    <section class="py-24 border-b border-surface-subtle">
+      <div class="w-full max-w-3xl mx-auto px-6 text-center">
+        <a href={gearsUrl()} class="inline-flex min-h-[44px] items-center text-sm text-ink-muted hover:text-ink-primary mb-6">← All {GEARS.plural.toLowerCase()}</a>
+        {gear.status === 'in-development' && <p class="text-xs font-medium uppercase tracking-wider text-brand-orange mb-3">In development</p>}
+        <h1 class="text-4xl md:text-5xl font-semibold leading-tight text-ink-primary">{title}</h1>
+        <p class="mt-6 text-lg text-ink-muted leading-relaxed text-balance">{gear.summary}</p>
+        <p class="mt-4 text-sm text-ink-muted">For: {gear.forWho}</p>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-surface-subtle bg-white" aria-labelledby="tools-heading">
+      <div class="w-full max-w-content mx-auto px-6">
+        <h2 id="tools-heading" class="text-3xl font-semibold mb-12 text-ink-primary text-center">What your AI app can do with it</h2>
+        <ul class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {gear.tools.map((t) => (
+            <li class="border-t-2 border-brand-orange pt-6">
+              <h3 class="text-lg font-semibold mb-2 text-ink-primary">{t.title}</h3>
+              <p class="text-ink-muted text-sm leading-relaxed">{t.body}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-surface-subtle" aria-labelledby="notes-heading">
+      <div class="w-full max-w-3xl mx-auto px-6">
+        <h2 id="notes-heading" class="text-3xl font-semibold mb-8 text-ink-primary text-center">Good to know</h2>
+        <div class="space-y-6 text-ink-muted leading-relaxed">
+          <p>Everything runs on your computer. Your data stays in a folder there and never reaches Pecuvate. Keep that folder private and back it up somewhere private.</p>
+          {gear.notes.map((n) => <p>{n}</p>)}
+        </div>
+        {gear.status === 'in-development' && (
+          <div class="mt-12 text-center">
+            <p class="text-ink-primary font-medium mb-2">Install steps will appear here when the {title} is released.</p>
+            {gear.interim && <a href={gear.interim.href} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[44px] items-center text-sm text-brand-orange hover:underline">{gear.interim.label} &rarr;</a>}
+          </div>
+        )}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

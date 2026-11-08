@@ -5,13 +5,14 @@ const year = new Date().getFullYear();
 const email = 'enquiries@pecuvate.com';
 import { socialLinks } from '../lib/social';
 import { SITE_URL, blogUrl } from '../lib/blog';
+import { GEARS, gearsUrl } from '../lib/gears';
 
 const columns = [
   {
     heading: 'Explore',
     links: [
       { label: 'About', href: `${SITE_URL}/about/` },
-      { label: 'Kits', href: `${SITE_URL}/kits/` },
+      { label: GEARS.plural, href: `${SITE_URL}${gearsUrl()}` },
       { label: 'Blog', href: blogUrl() },
       { label: 'Contact', href: `mailto:${email}` },
     ],

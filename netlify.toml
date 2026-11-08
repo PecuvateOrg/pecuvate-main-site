@@ -68,3 +68,10 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Kits were renamed Gears on 2026-11-08 (public name lives in src/src/lib/gears.ts).
+[[redirects]]
+  from   = "/kits/*"
+  to     = "/gears/:splat"
+  status = 301
+  force  = true
