@@ -1,11 +1,11 @@
 ---
-import { kitUrl } from '@/lib/kits';
+import { GEARS, gearUrl } from '@/lib/gears';
 
 const projects = [
   { tag: 'Empowr CIC', title: 'Members and bookings', description: 'One platform for booking sessions, memberships, payments, refunds and waivers, replacing a set of separate tools.' },
   { tag: 'Empowr CIC', title: 'Freelancer network', description: 'Applications, contracts, shifts and payroll run as one connected flow instead of a week of manual coordination.' },
   { tag: 'Pecuvate', title: 'AI customer support', description: 'A chat assistant that answers from the organisation’s own knowledge and hands over to staff when it should.' },
-  { tag: 'Product', title: 'Finance kit', description: 'An open kit that syncs the bank and keeps the books, set up by your own AI agent.', href: kitUrl('finance') },
+  { tag: 'Product', title: `Finance ${GEARS.singular}`, description: 'Syncs the bank and keeps the books through your own AI app, with everything stored on your computer.', href: gearUrl('finance') },
 ];
 ---
 
@@ -22,7 +22,7 @@ const projects = [
           <p class="text-xs font-medium uppercase tracking-wider text-ink-muted mb-2">{p.tag}</p>
           <h3 class="text-lg font-semibold mb-2 text-ink-primary">{p.title}</h3>
           <p class="text-ink-muted text-sm leading-relaxed">{p.description}</p>
-          {p.href && <a href={p.href} class="mt-4 inline-flex min-h-[44px] items-center text-sm text-brand-orange hover:underline">See the kit &rarr;</a>}
+          {p.href && <a href={p.href} class="mt-4 inline-flex min-h-[44px] items-center text-sm text-brand-orange hover:underline">Learn more &rarr;</a>}
         </div>
       ))}
     </div>

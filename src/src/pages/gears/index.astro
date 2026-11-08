@@ -1,0 +1,59 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SiteHeader from '@/components/SiteHeader.astro';
+import Footer from '@/components/Footer.astro';
+import { GEARS, gears, gearUrl } from '@/lib/gears';
+
+const how = [
+  { title: 'Install it on your computer', body: `Each ${GEARS.singular.toLowerCase()} installs once. It keeps its data in a folder on your machine that you choose.` },
+  { title: 'Connect it to your AI app', body: 'Add it to a desktop AI app that supports local connections (MCP), such as Claude Desktop.' },
+  { title: 'Ask for what you need', body: `Your AI app can now use the ${GEARS.singular.toLowerCase()}’s tools. You ask in plain words; it does the work.` },
+];
+---
+
+<BaseLayout title={`${GEARS.plural} — Pecuvate`} description={`${GEARS.plural} connect tools we’ve built to the AI app you already use, with everything running and stored on your own computer.`}>
+  <SiteHeader />
+  <main>
+    <section class="py-24 border-b border-surface-subtle">
+      <div class="w-full max-w-3xl mx-auto px-6 text-center">
+        <p class="text-xs font-medium uppercase tracking-wider text-brand-orange mb-3">Pecuvate {GEARS.plural}</p>
+        <h1 class="text-4xl md:text-5xl font-semibold leading-tight text-balance text-ink-primary">Our tools, in your AI app. Your data, on your computer.</h1>
+        <p class="mt-6 text-lg text-ink-muted leading-relaxed text-balance">A {GEARS.singular.toLowerCase()} adds a set of tools we’ve built to the AI app you already use. Everything runs and is stored on your own machine, so your data never reaches Pecuvate.</p>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-surface-subtle bg-white" aria-labelledby="how-heading">
+      <div class="w-full max-w-content mx-auto px-6">
+        <h2 id="how-heading" class="text-3xl font-semibold mb-12 text-ink-primary text-center">How it works</h2>
+        <ol class="grid gap-8 md:grid-cols-3">
+          {how.map((s, i) => (
+            <li class="border-t-2 border-brand-orange pt-6">
+              <p class="text-sm font-medium text-brand-orange mb-2">0{i + 1}</p>
+              <h3 class="text-lg font-semibold mb-2 text-ink-primary">{s.title}</h3>
+              <p class="text-ink-muted text-sm leading-relaxed">{s.body}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="py-24 border-b border-surface-subtle" aria-labelledby="list-heading">
+      <div class="w-full max-w-content mx-auto px-6">
+        <h2 id="list-heading" class="text-3xl font-semibold mb-12 text-ink-primary text-center">Choose a {GEARS.singular.toLowerCase()}</h2>
+        <ul class="flex flex-wrap justify-center gap-8">
+          {gears.map((g) => (
+            <li class="w-full md:w-[calc((100%-4rem)/3)] p-8 border border-surface-subtle bg-white flex flex-col">
+              {g.status === 'in-development' && <p class="text-xs font-medium uppercase tracking-wider text-brand-orange mb-3">In development</p>}
+              <h3 class="text-lg font-semibold mb-3 text-ink-primary">{g.name} {GEARS.singular}</h3>
+              <p class="text-ink-muted text-sm leading-relaxed mb-6">{g.summary}</p>
+              <a href={gearUrl(g.slug)} class="mt-auto inline-flex min-h-[44px] items-center justify-center px-6 border border-ink-primary text-ink-primary font-medium hover:bg-ink-primary hover:text-white transition-colors duration-200">
+                About the {g.name} {GEARS.singular}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
