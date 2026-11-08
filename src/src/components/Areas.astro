@@ -1,0 +1,27 @@
+---
+const areas = [
+  { label: 'Automation and AI', description: 'Assistants that answer from your own knowledge, and workflows that run without someone pushing each step.' },
+  { label: 'Platforms and payments', description: 'Booking, membership, donations, payments and e-signature, built around how you actually operate.' },
+  { label: 'Operations and finance', description: 'Bank sync, bookkeeping, staff work lists and dashboards that keep the running of things in view.' },
+  { label: 'Products and kits', description: 'Solutions that work well enough to share become tools anyone can set up for themselves.' },
+];
+---
+
+<section id="areas" class="py-24 border-b border-surface-subtle">
+  <div class="w-full max-w-content mx-auto px-6">
+
+    <p class="text-xs font-medium uppercase tracking-wider text-brand-orange mb-3">Areas we work in</p>
+    <h2 class="text-3xl font-semibold mb-4 text-ink-primary max-w-2xl text-balance">Where our solutions are making a difference now</h2>
+    <p class="text-ink-muted max-w-2xl mb-12 leading-relaxed">These are the areas with the most immediate and long-term potential today. The approach stays the same wherever the problem is.</p>
+
+    <div class="grid gap-px bg-surface-subtle border border-surface-subtle sm:grid-cols-2">
+      {areas.map((a) => (
+        <div class="bg-white p-8">
+          <h3 class="text-lg font-semibold mb-2 text-ink-primary">{a.label}</h3>
+          <p class="text-ink-muted text-sm leading-relaxed">{a.description}</p>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

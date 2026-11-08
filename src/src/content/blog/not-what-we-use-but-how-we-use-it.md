@@ -1,6 +1,6 @@
 ---
 title: "Not What We Use — But How We Use It"
-description: " Rethinking The Way We Solve Problems Reframing the Problem The advancement of technology has profoundly reshaped the way we approach problem-solving."
+description: "Rethinking the way we solve problems: technology changes not just the tools we use, but how a problem can be framed."
 pubDate: 2025-11-13
 pillars: [entrepreneur]
 author: "Shaun Barnett"

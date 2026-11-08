@@ -1,6 +1,6 @@
 ---
 title: "A New Approach To Education"
-description: " How We Lost the Purpose of Education — and How to Get It Back. The way education is being taught needs to change. Currently, the purpose of education is so that the student is able to pass an exam at the end of the academic process."
+description: "How we lost the purpose of education, and how to get it back."
 pubDate: 2025-11-25
 pillars: [educate]
 author: "Shaun Barnett"

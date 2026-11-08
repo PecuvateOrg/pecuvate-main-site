@@ -1,34 +1,30 @@
 ---
-const pillars = [
-  {
-    label: 'Consulting',
-    description: 'We diagnose the root cause of what isn’t working inside an existing organisation, then architect the business model or system redesign required. The output is not a recommendation deck — it is a rebuilt model.',
-  },
-  {
-    label: 'Venture Co-creation',
-    description: 'We partner from inception, with equity, to build ventures with enduring systems designed in from day one — not bolted on after the fact.',
-  },
-  {
-    label: 'Product Development',
-    description: 'What works across consulting and venture work gets systematised into scalable tools — serving the portfolio first, then the wider market.',
-  },
+const steps = [
+  { step: '01', label: 'Discover', description: 'We start with the problem, not the tool. We work out what is really getting in the way and what a good solution has to do.' },
+  { step: '02', label: 'Build', description: 'We invent the solution and build it, choosing the right resource for each part: software, automation, AI, or a better process.' },
+  { step: '03', label: 'Apply', description: 'We put it to work in your day-to-day, so it keeps doing its job long after launch.' },
 ];
 ---
 
-<section id="what-we-do" class="py-24 border-b border-surface-subtle">
-  <div class="w-full max-w-content mx-auto px-6">
+<section id="what-we-do" class="py-24 border-b border-surface-subtle bg-white">
+  <div class="w-full max-w-content mx-auto px-6 grid gap-12 md:grid-cols-[1fr_2fr]">
 
-    <h2 class="text-3xl font-semibold mb-4 text-ink-primary text-center">How we work</h2>
-    <p class="text-ink-muted max-w-2xl mx-auto text-center mb-16 leading-relaxed">One method — architect the model, then build what runs it — applied through three vehicles, depending on what a given problem requires.</p>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {pillars.map((pillar) => (
-        <div class="p-8 border border-surface-subtle bg-white">
-          <h3 class="text-lg font-semibold mb-3 text-ink-primary">{pillar.label}</h3>
-          <p class="text-ink-muted text-sm leading-relaxed">{pillar.description}</p>
-        </div>
-      ))}
+    <div>
+      <p class="text-xs font-medium uppercase tracking-wider text-brand-orange mb-3">What we do</p>
+      <h2 class="text-3xl font-semibold text-ink-primary text-balance">The right solution for the task. The right resource for the solution.</h2>
     </div>
+
+    <ol class="grid gap-10">
+      {steps.map((s) => (
+        <li class="grid grid-cols-[3rem_1fr] gap-4 border-t border-surface-subtle pt-6">
+          <span class="text-sm font-medium text-brand-orange">{s.step}</span>
+          <div>
+            <h3 class="text-xl font-semibold mb-2 text-ink-primary">{s.label}</h3>
+            <p class="text-ink-muted leading-relaxed">{s.description}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
 
   </div>
 </section>
