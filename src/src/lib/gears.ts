@@ -30,7 +30,7 @@ export const gears: Gear[] = [
     status: 'in-development',
     summary:
       'Keep your company’s books, prepare the year-end accounts and corporation tax return, and file them once you approve, by asking your AI app.',
-    forWho: 'Small UK limited companies filing micro-entity accounts.',
+    forWho: 'Founders and small teams who already use an AI app: UK limited companies, companies limited by guarantee, community interest companies and unincorporated clubs, filing micro-entity accounts. Not for registered charities.',
     tools: [
       { title: 'Find your company', body: 'Looks up Companies House, your last accounts and your deadlines from the company name alone.' },
       { title: 'Bring in bank lines', body: 'Reads a statement download or a one-off bank connection, and proves every line against your balance.' },
@@ -40,7 +40,7 @@ export const gears: Gear[] = [
     dataNote: 'Everything runs on your computer. Your data stays in a folder there and never reaches Pecuvate. Keep that folder private and back it up somewhere private.',
     notes: [
       'This is software, not an accountancy service and not tax advice. You, as director, are responsible for the accounts and returns, and nothing is filed without your approval.',
-      'Not covered yet: VAT returns, payroll, capital allowances on fixed assets, periods longer than 12 months, and anything above micro-entity size.',
+      'Not covered yet: VAT returns, running payroll (it recommends a payroll platform), capital allowances on fixed assets, periods longer than 12 months, and anything above micro-entity size.',
     ],
     interim: { label: 'Until it’s ready, the finance kit is on GitHub', href: 'https://github.com/PecuvateOrg/finance-kit' },
   },
