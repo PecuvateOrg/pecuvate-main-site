@@ -40,4 +40,22 @@ export const gears: Gear[] = [
     ],
     interim: { label: 'Until it’s ready, the finance kit is on GitHub', href: 'https://github.com/PecuvateOrg/finance-kit' },
   },
+  {
+    slug: 'pecusign',
+    name: 'PecuSign',
+    status: 'in-development',
+    summary:
+      'Have documents signed electronically by asking your AI app. Your AI writes the document; PecuSign collects the signatures, seals the signed copy and hands it back to you.',
+    forWho: 'Organisations that send agreements, board papers or contracts for signature and want their AI app to handle it.',
+    tools: [
+      { title: 'Prepare', body: 'Takes the finished PDF and the signers, with an order if it matters: everyone at once, one after another, or some together and then the next.' },
+      { title: 'Send on approval', body: 'Shows you who will be emailed and sends only when you confirm.' },
+      { title: 'Sign', body: 'Each signer reads the document, agrees, types or draws their signature, and confirms with a code sent to their email.' },
+      { title: 'Seal and return', body: 'Builds one signed PDF with a certificate of what happened and an independent timestamp, and sends it to everyone.' },
+    ],
+    notes: [
+      'We do not keep a copy of your documents. You download the signed copy and save it; the files are deleted 30 days after completion. Paid storage keeps them locked for seven years.',
+      'Electronic signatures are recognised in the UK under the Electronic Communications Act 2000. Some documents, such as certain deeds, have extra formality rules.',
+    ],
+  },
 ];
