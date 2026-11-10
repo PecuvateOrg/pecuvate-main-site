@@ -5,6 +5,7 @@ export const GEARS = { plural: 'Gears', singular: 'Gear', path: 'gears' } as con
 
 export const gearsUrl = () => `/${GEARS.path}/`;
 export const gearUrl = (slug: string) => `/${GEARS.path}/${slug}/`;
+export const gearHelpUrl = (slug: string, article?: string) => `/${GEARS.path}/${slug}/help/${article ? `${article}/` : ''}`;
 
 export type GearStatus = 'available' | 'in-development';
 
@@ -15,6 +16,8 @@ export interface Gear {
   summary: string;
   forWho: string;
   tools: { title: string; body: string }[];
+  // Where the customer's data lives: shown first under "Good to know".
+  dataNote: string;
   notes: string[];
   // Interim route while the gear is in development, if one exists.
   interim?: { label: string; href: string };
@@ -34,6 +37,7 @@ export const gears: Gear[] = [
       { title: 'Draft the accounts', body: 'Records each line, asks short questions about anything unclear, and drafts the accounts and tax figures with a plain summary.' },
       { title: 'File on approval', body: 'Shows you exactly what will be filed, and files only when you say so.' },
     ],
+    dataNote: 'Everything runs on your computer. Your data stays in a folder there and never reaches Pecuvate. Keep that folder private and back it up somewhere private.',
     notes: [
       'This is software, not an accountancy service and not tax advice. You, as director, are responsible for the accounts and returns, and nothing is filed without your approval.',
       'Not covered yet: VAT returns, payroll, capital allowances on fixed assets, periods longer than 12 months, and anything above micro-entity size.',
@@ -53,8 +57,8 @@ export const gears: Gear[] = [
       { title: 'Sign', body: 'Each signer reads the document, agrees, types or draws their signature, and confirms with a code sent to their email.' },
       { title: 'Seal and return', body: 'Builds one signed PDF with a certificate of what happened and an independent timestamp, and sends it to everyone.' },
     ],
+    dataNote: 'Your documents pass through PecuSign only while they are being signed. We do not keep a copy: you download the signed copy and save it, and the files are deleted 30 days after completion. Paid storage keeps them locked for seven years.',
     notes: [
-      'We do not keep a copy of your documents. You download the signed copy and save it; the files are deleted 30 days after completion. Paid storage keeps them locked for seven years.',
       'Electronic signatures are recognised in the UK under the Electronic Communications Act 2000. Some documents, such as certain deeds, have extra formality rules.',
     ],
   },
