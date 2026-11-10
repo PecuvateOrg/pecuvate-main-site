@@ -21,4 +21,11 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+// Help articles for each Gear. Written in the Gear's own repo (docs/support/) and copied here by the
+// hub script projects/scripts/sync-gear-help.mjs after a leak check — never edit them here.
+const gearHelp = defineCollection({
+  loader: glob({ pattern: '*/*.md', base: './src/content/gear-help' }),
+  schema: z.object({ title: z.string(), description: z.string(), order: z.number().default(99) }),
+});
+
+export const collections = { blog, gearHelp };

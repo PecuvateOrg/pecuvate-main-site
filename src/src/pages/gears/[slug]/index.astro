@@ -2,7 +2,8 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SiteHeader from '@/components/SiteHeader.astro';
 import Footer from '@/components/Footer.astro';
-import { GEARS, gears, gearsUrl, type Gear } from '@/lib/gears';
+import { getCollection } from 'astro:content';
+import { GEARS, gears, gearsUrl, gearHelpUrl, type Gear } from '@/lib/gears';
 
 export function getStaticPaths() {
   return gears.map((gear) => ({ params: { slug: gear.slug }, props: { gear } }));
@@ -10,6 +11,7 @@ export function getStaticPaths() {
 
 const { gear } = Astro.props as { gear: Gear };
 const title = `${gear.name} ${GEARS.singular}`;
+const hasHelp = (await getCollection('gearHelp')).some((a) => a.id.startsWith(`${gear.slug}/`));
 ---
 
 <BaseLayout title={`${title} — Pecuvate`} description={gear.summary}>
@@ -43,13 +45,18 @@ const title = `${gear.name} ${GEARS.singular}`;
       <div class="w-full max-w-3xl mx-auto px-6">
         <h2 id="notes-heading" class="text-3xl font-semibold mb-8 text-ink-primary text-center">Good to know</h2>
         <div class="space-y-6 text-ink-muted leading-relaxed">
-          <p>Everything runs on your computer. Your data stays in a folder there and never reaches Pecuvate. Keep that folder private and back it up somewhere private.</p>
+          <p>{gear.dataNote}</p>
           {gear.notes.map((n) => <p>{n}</p>)}
         </div>
         {gear.status === 'in-development' && (
           <div class="mt-12 text-center">
-            <p class="text-ink-primary font-medium mb-2">Install steps will appear here when the {title} is released.</p>
+            <p class="text-ink-primary font-medium mb-2">How to connect it will appear here when the {title} is released.</p>
             {gear.interim && <a href={gear.interim.href} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[44px] items-center text-sm text-brand-orange hover:underline">{gear.interim.label} &rarr;</a>}
+          </div>
+        )}
+        {hasHelp && (
+          <div class="mt-8 text-center">
+            <a href={gearHelpUrl(gear.slug)} class="inline-flex min-h-[44px] items-center text-sm text-brand-orange hover:underline">Help and guides for the {title} &rarr;</a>
           </div>
         )}
       </div>

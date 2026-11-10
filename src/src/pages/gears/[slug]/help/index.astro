@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SiteHeader from '@/components/SiteHeader.astro';
+import Footer from '@/components/Footer.astro';
+import { GEARS, gears, gearUrl, gearHelpUrl, type Gear } from '@/lib/gears';
+
+export async function getStaticPaths() {
+  const all = await getCollection('gearHelp');
+  return gears
+    .map((gear) => ({ gear, articles: all.filter((a) => a.id.startsWith(`${gear.slug}/`)).sort((a, b) => a.data.order - b.data.order) }))
+    .filter(({ articles }) => articles.length)
+    .map(({ gear, articles }) => ({ params: { slug: gear.slug }, props: { gear, articles } }));
+}
+
+const { gear, articles } = Astro.props as { gear: Gear; articles: Awaited<ReturnType<typeof getCollection<'gearHelp'>>> };
+const title = `${gear.name} ${GEARS.singular}`;
+---
+
+<BaseLayout title={`Help: ${title} — Pecuvate`} description={`Help and guides for the ${title}.`}>
+  <SiteHeader />
+  <main class="py-20">
+    <div class="w-full max-w-3xl mx-auto px-6">
+      <a href={gearUrl(gear.slug)} class="inline-flex min-h-[44px] items-center text-sm text-ink-muted hover:text-ink-primary mb-6">← {title}</a>
+      <h1 class="text-4xl font-semibold leading-tight text-ink-primary mb-12">Help: {title}</h1>
+      <ul class="space-y-8">
+        {articles.map((a) => (
+          <li class="border-t-2 border-brand-orange pt-6">
+            <a href={gearHelpUrl(gear.slug, a.id.split('/')[1])} class="text-xl font-semibold text-ink-primary hover:text-brand-orange">{a.data.title}</a>
+            <p class="mt-2 text-ink-muted leading-relaxed">{a.data.description}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
