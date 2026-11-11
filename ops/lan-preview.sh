@@ -24,7 +24,7 @@ cd "$REPO/src"
 echo "lan-preview: installing (frozen lockfile, as Netlify does)..."
 pnpm install --frozen-lockfile
 echo "lan-preview: building on Node ${NODE_MAJOR} (Netlify's version)..."
-npx -y "node@${NODE_MAJOR}" node_modules/astro/astro.js build
+npx -y "node@${NODE_MAJOR}" node_modules/astro/bin/astro.mjs build
 echo
 echo "lan-preview: serving at http://${LAN_IP}:${PORT}  - share this with anyone on the network."
 echo "             Ctrl+C to stop. Branch: $(git rev-parse --abbrev-ref HEAD) @ $(git rev-parse --short HEAD)"
