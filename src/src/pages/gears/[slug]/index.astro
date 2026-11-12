@@ -17,17 +17,17 @@ const hasHelp = (await getCollection('gearHelp')).some((a) => a.id.startsWith(`$
 <BaseLayout title={`${title} — Pecuvate`} description={gear.summary}>
   <SiteHeader />
   <main>
-    <section class="py-24 border-b border-surface-subtle">
+    <section class="py-16 md:py-24 border-b border-surface-subtle">
       <div class="w-full max-w-3xl mx-auto px-6 text-center">
         <a href={gearsUrl()} class="inline-flex min-h-[44px] items-center text-sm text-ink-muted hover:text-ink-primary mb-6">← All {GEARS.plural.toLowerCase()}</a>
-        {gear.status === 'in-development' && <p class="text-xs font-medium uppercase tracking-wider text-brand-orange mb-3">In development</p>}
+        {gear.status === 'in-development' && <p class="text-xs font-medium uppercase tracking-wider text-brand-orange-text mb-3">In development</p>}
         <h1 class="text-4xl md:text-5xl font-semibold leading-tight text-ink-primary">{title}</h1>
         <p class="mt-6 text-lg text-ink-muted leading-relaxed text-balance">{gear.summary}</p>
         <p class="mt-4 text-sm text-ink-muted">For: {gear.forWho}</p>
       </div>
     </section>
 
-    <section class="py-24 border-b border-surface-subtle bg-white" aria-labelledby="tools-heading">
+    <section class="py-16 md:py-24 border-b border-surface-subtle bg-white" aria-labelledby="tools-heading">
       <div class="w-full max-w-content mx-auto px-6">
         <h2 id="tools-heading" class="text-3xl font-semibold mb-12 text-ink-primary text-center">What your AI app can do with it</h2>
         <ul class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -41,7 +41,7 @@ const hasHelp = (await getCollection('gearHelp')).some((a) => a.id.startsWith(`$
       </div>
     </section>
 
-    <section class="py-24 border-b border-surface-subtle" aria-labelledby="notes-heading">
+    <section class="py-16 md:py-24 border-b border-surface-subtle" aria-labelledby="notes-heading">
       <div class="w-full max-w-3xl mx-auto px-6">
         <h2 id="notes-heading" class="text-3xl font-semibold mb-8 text-ink-primary text-center">Good to know</h2>
         <div class="space-y-6 text-ink-muted leading-relaxed">
@@ -51,12 +51,12 @@ const hasHelp = (await getCollection('gearHelp')).some((a) => a.id.startsWith(`$
         {gear.status === 'in-development' && (
           <div class="mt-12 text-center">
             <p class="text-ink-primary font-medium mb-2">How to connect it will appear here when the {title} is released.</p>
-            {gear.interim && <a href={gear.interim.href} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[44px] items-center text-sm text-brand-orange hover:underline">{gear.interim.label} &rarr;</a>}
+            {gear.interim && <a href={gear.interim.href} target="_blank" rel="noopener noreferrer" class="inline-flex min-h-[44px] items-center text-sm text-brand-orange-text hover:underline">{gear.interim.label} &rarr;</a>}
           </div>
         )}
         {hasHelp && (
           <div class="mt-8 text-center">
-            <a href={gearHelpUrl(gear.slug)} class="inline-flex min-h-[44px] items-center text-sm text-brand-orange hover:underline">Help and guides for the {title} &rarr;</a>
+            <a href={gearHelpUrl(gear.slug)} class="inline-flex min-h-[44px] items-center text-sm text-brand-orange-text hover:underline">Help and guides for the {title} &rarr;</a>
           </div>
         )}
       </div>
