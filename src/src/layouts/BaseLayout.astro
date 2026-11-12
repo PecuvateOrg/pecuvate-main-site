@@ -1,21 +1,6 @@
 ---
 import '../styles/global.css';
 import { blogUrl } from '../lib/blog';
-import { ClientRouter } from 'astro:transitions';
-
-// Page transition = Web Build Framework motion Level 1 (fade + rise 20px, 0.5s).
-const ease = 'cubic-bezier(0.22, 1, 0.36, 1)';
-const pageTransition = {
-  forwards: {
-    old: { name: 'pvPageOut', duration: '0.2s', easing: 'ease-in', fillMode: 'both' },
-    new: { name: 'pvPageIn', duration: '0.5s', easing: ease, fillMode: 'both' },
-  },
-  backwards: {
-    old: { name: 'pvPageOut', duration: '0.2s', easing: 'ease-in', fillMode: 'both' },
-    new: { name: 'pvPageIn', duration: '0.5s', easing: ease, fillMode: 'both' },
-  },
-};
-
 interface Props {
   title?: string;
   description?: string;
@@ -63,10 +48,9 @@ const {
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <ClientRouter />
     <script is:inline>
       // Smooth scrolling only for links to a section on the same page (e.g. "See what we've built").
-      // It is not set in CSS: the page router's jump to the top of a new page must not animate.
+      // Done here rather than with CSS scroll-behavior so it respects reduced motion per click.
       document.addEventListener('click', function (e) {
         var a = e.target.closest && e.target.closest('a[href^="#"]');
         if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
@@ -80,7 +64,7 @@ const {
       }, true);
     </script>
   </head>
-  <body class="bg-surface text-ink-primary font-sans antialiased" transition:animate={pageTransition}>
+  <body class="bg-surface text-ink-primary font-sans antialiased">
     <slot />
   </body>
 </html>

@@ -93,8 +93,7 @@ const label = 'block text-sm font-medium mb-2 text-ink-primary';
     });
   }
 
-  // Runs on first load and after every client-side page change (ClientRouter).
-  document.addEventListener('astro:page-load', async () => {
+  (async () => {
     const form = document.getElementById('contact-form') as HTMLFormElement | null;
     if (!form) return;
     const errorEl = document.getElementById('form-error')!;
@@ -148,5 +147,5 @@ const label = 'block text-sm font-medium mb-2 text-ink-primary';
       button.disabled = false;
       button.textContent = 'Send message';
     });
-  });
+  })();
 </script>

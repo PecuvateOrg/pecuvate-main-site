@@ -6,7 +6,7 @@ const onAbout = Astro.url.pathname.startsWith('/about');
 const onGears = Astro.url.pathname.startsWith(gearsUrl());
 ---
 
-<header class="border-b border-surface-subtle" transition:name="site-header" transition:animate="none">
+<header class="border-b border-surface-subtle">
   <div class="w-full max-w-content mx-auto px-6 py-5 flex items-center justify-between">
     <a href={SITE_URL} class="flex min-h-[44px] items-center gap-3 text-ink-primary">
       <img src="/logo.png" alt="" width="32" height="32" />
