@@ -65,17 +65,19 @@ const {
     />
     <ClientRouter />
     <script is:inline>
-      // Smooth scrolling is for in-page links only. On a page change the router jumps to the
-      // top; with smooth scrolling on, that jump was animated from the bottom of the old page.
-      document.addEventListener('astro:before-preparation', function () {
-        document.documentElement.style.scrollBehavior = 'auto';
-      });
-      document.addEventListener('astro:before-swap', function (e) {
-        e.newDocument.documentElement.style.scrollBehavior = 'auto';
-      });
-      document.addEventListener('astro:page-load', function () {
-        requestAnimationFrame(function () { document.documentElement.style.scrollBehavior = ''; });
-      });
+      // Smooth scrolling only for links to a section on the same page (e.g. "See what we've built").
+      // It is not set in CSS: the page router's jump to the top of a new page must not animate.
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href^="#"]');
+        if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+        var id = decodeURIComponent(a.getAttribute('href').slice(1));
+        var target = id && document.getElementById(id);
+        if (!target) return;
+        e.preventDefault();
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+        history.pushState(null, '', '#' + id);
+      }, true);
     </script>
   </head>
   <body class="bg-surface text-ink-primary font-sans antialiased" transition:animate={pageTransition}>
