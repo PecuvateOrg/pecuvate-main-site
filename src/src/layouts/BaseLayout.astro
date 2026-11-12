@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { blogUrl } from '../lib/blog';
+import { ClientRouter, fade } from 'astro:transitions';
 
 interface Props {
   title?: string;
@@ -11,7 +12,7 @@ interface Props {
 }
 
 const {
-  title = 'Pecuvate — Solutions Built for You',
+  title = 'Pecuvate — Solutions Built to Endure',
   ogType = 'website',
   description = 'Pecuvate invents solutions tailored to your needs: we help you discover, build and apply the right technological solution.',
   canonical = new URL(Astro.url.pathname, Astro.site).toString(),
@@ -49,8 +50,9 @@ const {
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <ClientRouter />
   </head>
-  <body class="bg-surface text-ink-primary font-sans antialiased">
+  <body class="bg-surface text-ink-primary font-sans antialiased" transition:animate={fade({ duration: '0.4s' })}>
     <slot />
   </body>
 </html>

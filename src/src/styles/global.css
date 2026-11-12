@@ -17,19 +17,3 @@
   }
 }
 
-/* Page transitions: native cross-document view transitions (no JS).
-   Browsers without support simply navigate as before. */
-@view-transition {
-  navigation: auto;
-}
-
-@keyframes pv-fade-out { to { opacity: 0; transform: translateY(-6px); } }
-@keyframes pv-fade-in { from { opacity: 0; transform: translateY(8px); } }
-
-::view-transition-old(root) { animation: 180ms ease-in both pv-fade-out; }
-::view-transition-new(root) { animation: 260ms ease-out both pv-fade-in; }
-
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-old(root),
-  ::view-transition-new(root) { animation: none; }
-}
