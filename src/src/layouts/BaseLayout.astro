@@ -1,7 +1,20 @@
 ---
 import '../styles/global.css';
 import { blogUrl } from '../lib/blog';
-import { ClientRouter, fade } from 'astro:transitions';
+import { ClientRouter } from 'astro:transitions';
+
+// Page transition = Web Build Framework motion Level 1 (fade + rise 20px, 0.5s).
+const ease = 'cubic-bezier(0.22, 1, 0.36, 1)';
+const pageTransition = {
+  forwards: {
+    old: { name: 'pvPageOut', duration: '0.2s', easing: 'ease-in', fillMode: 'both' },
+    new: { name: 'pvPageIn', duration: '0.5s', easing: ease, fillMode: 'both' },
+  },
+  backwards: {
+    old: { name: 'pvPageOut', duration: '0.2s', easing: 'ease-in', fillMode: 'both' },
+    new: { name: 'pvPageIn', duration: '0.5s', easing: ease, fillMode: 'both' },
+  },
+};
 
 interface Props {
   title?: string;
@@ -52,7 +65,7 @@ const {
     />
     <ClientRouter />
   </head>
-  <body class="bg-surface text-ink-primary font-sans antialiased" transition:animate={fade({ duration: '0.4s' })}>
+  <body class="bg-surface text-ink-primary font-sans antialiased" transition:animate={pageTransition}>
     <slot />
   </body>
 </html>
