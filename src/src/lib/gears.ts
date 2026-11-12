@@ -37,7 +37,7 @@ export const gears: Gear[] = [
       { title: 'Draft the accounts', body: 'Records each line, asks short questions about anything unclear, and drafts the accounts and tax figures with a plain summary.' },
       { title: 'File on approval', body: 'Shows you exactly what will be filed, and files only when you say so.' },
     ],
-    dataNote: 'Everything runs on your computer. Your data stays in a folder there and never reaches Pecuvate. Keep that folder private and back it up somewhere private.',
+    dataNote: 'It runs on your own computer, or inside your AI app’s workspace when you only want draft accounts. Your data never reaches Pecuvate. Your AI app reads it under that app’s own terms, and filing sends your accounts to Companies House and HMRC through the filing software you choose. Keep your books private and back them up somewhere private.',
     notes: [
       'This is software, not an accountancy service and not tax advice. You, as director, are responsible for the accounts and returns, and nothing is filed without your approval.',
       'Not covered yet: VAT returns, running payroll (it recommends a payroll platform), capital allowances on fixed assets, periods longer than 12 months, and anything above micro-entity size.',
