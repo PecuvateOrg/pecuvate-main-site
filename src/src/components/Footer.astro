@@ -2,7 +2,6 @@
 const year = new Date().getFullYear();
 
 // TODO: Replace with approved values from Production/01-content/footer.md
-const email = 'enquiries@pecuvate.com';
 import { socialLinks } from '../lib/social';
 import { SITE_URL, blogUrl } from '../lib/blog';
 import { GEARS, gearsUrl } from '../lib/gears';
@@ -14,7 +13,7 @@ const columns = [
       { label: 'About', href: `${SITE_URL}/about/` },
       { label: GEARS.plural, href: `${SITE_URL}${gearsUrl()}` },
       { label: 'Blog', href: blogUrl() },
-      { label: 'Contact', href: `mailto:${email}` },
+      { label: 'Contact', href: `${SITE_URL}/contact/` },
     ],
   },
   {

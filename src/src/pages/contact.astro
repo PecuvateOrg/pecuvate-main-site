@@ -1,0 +1,152 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SiteHeader from '@/components/SiteHeader.astro';
+import Footer from '@/components/Footer.astro';
+
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '';
+const topics = ['A project', 'Gears', 'Partnership', 'Something else'];
+const email = 'enquiries@pecuvate.com';
+const input = 'w-full min-h-[44px] px-4 py-2 border border-surface-subtle bg-white text-ink-primary focus:border-ink-primary outline-none transition-colors';
+const label = 'block text-sm font-medium mb-2 text-ink-primary';
+---
+
+<BaseLayout
+  title="Get in touch — Pecuvate"
+  description="Tell us what you need. We read every message and reply by email."
+  canonical="https://www.pecuvate.com/contact/"
+>
+  <SiteHeader />
+  <main class="py-24">
+    <div class="w-full max-w-xl mx-auto px-6">
+      <p class="text-xs font-medium uppercase tracking-wider text-brand-orange mb-3 text-center">Get in touch</p>
+      <h1 class="text-4xl font-semibold mb-4 text-ink-primary text-center text-balance">Tell us what you need</h1>
+      <p class="text-ink-muted text-center mb-12 leading-relaxed">We read every message and reply by email, usually within two working days.</p>
+
+      <form id="contact-form" class="grid gap-6" novalidate data-sitekey={siteKey}>
+        <div>
+          <label for="topic" class={label}>What is it about?</label>
+          <select id="topic" name="topic" class={input}>
+            {topics.map((t) => <option value={t}>{t}</option>)}
+          </select>
+        </div>
+        <div>
+          <label for="name" class={label}>Your name</label>
+          <input id="name" name="name" autocomplete="name" required maxlength="120" class={input} />
+        </div>
+        <div>
+          <label for="email" class={label}>Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required maxlength="254" class={input} />
+        </div>
+        <div>
+          <label for="organisation" class={label}>Organisation <span class="font-normal text-ink-muted">(optional)</span></label>
+          <input id="organisation" name="organisation" autocomplete="organization" maxlength="160" class={input} />
+        </div>
+        <div>
+          <label for="message" class={label}>Message</label>
+          <textarea id="message" name="message" rows="6" required maxlength="5000" class={`${input} leading-relaxed`}></textarea>
+        </div>
+        <div class="hidden" aria-hidden="true">
+          <label for="website">Leave this empty</label>
+          <input id="website" name="website" tabindex="-1" autocomplete="off" />
+        </div>
+        <div id="turnstile" class="flex justify-center min-h-[65px]"></div>
+        <p id="form-error" role="alert" class="hidden text-sm text-red-700 text-center"></p>
+        <button type="submit" class="w-full min-h-[44px] px-6 bg-ink-primary text-white text-sm font-medium hover:bg-black transition-colors disabled:opacity-60">Send message</button>
+        <p class="text-xs text-ink-muted text-center leading-relaxed">
+          We use your details only to reply to you. See our <a href="/legal/privacy-policy" class="underline underline-offset-2 hover:text-ink-primary">privacy policy</a>.
+        </p>
+      </form>
+
+      <div id="form-sent" class="hidden text-center" tabindex="-1">
+        <h2 class="text-2xl font-semibold mb-3 text-ink-primary">Thank you, your message is on its way</h2>
+        <p class="text-ink-muted leading-relaxed">We will reply to the email address you gave.</p>
+      </div>
+
+      <p class="text-sm text-ink-muted text-center mt-12">Prefer email? Write to <a href={`mailto:${email}`} class="underline underline-offset-2 hover:text-ink-primary">{email}</a>.</p>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script>
+  declare global {
+    interface Window {
+      turnstile?: { render: (el: HTMLElement, opts: object) => string; reset: (id?: string) => void; remove: (id: string) => void };
+    }
+  }
+
+  const FALLBACK = 'Sorry, your message could not be sent. Please email enquiries@pecuvate.com instead.';
+
+  function loadTurnstile(): Promise<void> {
+    if (window.turnstile) return Promise.resolve();
+    const existing = document.getElementById('cf-turnstile-api');
+    return new Promise((resolve, reject) => {
+      const s = (existing as HTMLScriptElement) ?? document.createElement('script');
+      s.addEventListener('load', () => resolve());
+      s.addEventListener('error', () => reject());
+      if (!existing) {
+        s.id = 'cf-turnstile-api';
+        s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+        s.async = true;
+        document.head.appendChild(s);
+      }
+    });
+  }
+
+  // Runs on first load and after every client-side page change (ClientRouter).
+  document.addEventListener('astro:page-load', async () => {
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    if (!form) return;
+    const errorEl = document.getElementById('form-error')!;
+    const sent = document.getElementById('form-sent')!;
+    const button = form.querySelector('button[type=submit]') as HTMLButtonElement;
+    const siteKey = form.dataset.sitekey;
+    let widgetId: string | undefined;
+
+    if (siteKey) {
+      try {
+        await loadTurnstile();
+        widgetId = window.turnstile!.render(document.getElementById('turnstile')!, { sitekey: siteKey });
+      } catch {
+        // Verification will fail server-side and the visitor gets the email fallback.
+      }
+    }
+
+    const showError = (msg: string) => {
+      errorEl.textContent = msg;
+      errorEl.classList.remove('hidden');
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      errorEl.classList.add('hidden');
+      const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+      if (!data.name?.trim() || !data.email?.trim() || !data.message?.trim()) {
+        showError('Please fill in your name, email and message.');
+        return;
+      }
+      button.disabled = true;
+      button.textContent = 'Sending…';
+      try {
+        const res = await fetch('/.netlify/functions/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...data, turnstileToken: data['cf-turnstile-response'] }),
+        });
+        const body = await res.json().catch(() => ({}));
+        if (res.ok) {
+          form.classList.add('hidden');
+          sent.classList.remove('hidden');
+          sent.focus();
+          return;
+        }
+        showError(body.error && body.error !== 'send_failed' ? body.error : FALLBACK);
+      } catch {
+        showError(FALLBACK);
+      }
+      if (widgetId && window.turnstile) window.turnstile.reset(widgetId);
+      button.disabled = false;
+      button.textContent = 'Send message';
+    });
+  });
+</script>
