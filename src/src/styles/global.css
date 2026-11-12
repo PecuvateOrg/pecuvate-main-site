@@ -21,3 +21,8 @@
 /* Page transition keyframes (used by BaseLayout's ClientRouter animation). */
 @keyframes pvPageOut { to { opacity: 0; } }
 @keyframes pvPageIn { from { opacity: 0; transform: translateY(20px); } }
+
+/* Homepage hero entrance: Web Build Framework motion Level 1 (fade + rise 20px, 0.5s, 80ms stagger). */
+@keyframes pvFadeUp { from { opacity: 0; transform: translateY(20px); } }
+.hero-in { animation: pvFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+@media (prefers-reduced-motion: reduce) { .hero-in { animation: none; } }
