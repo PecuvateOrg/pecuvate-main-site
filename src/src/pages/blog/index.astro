@@ -17,9 +17,9 @@ const used = new Set(posts.flatMap((p) => p.data.pillars));
 >
   <SiteHeader />
   <main class="py-24">
-    <div class="w-full max-w-content mx-auto px-6">
-      <h1 class="text-4xl font-semibold mb-4 text-ink-primary">Thinking</h1>
-      <p class="text-ink-muted max-w-2xl mb-10">
+    <div class="w-full max-w-3xl mx-auto px-6">
+      <h1 class="text-4xl font-semibold mb-4 text-ink-primary text-center">Thinking</h1>
+      <p class="text-ink-muted max-w-2xl mx-auto text-center mb-10">
         How we must look at things in order to progress, using the resources and technology already in reach.
       </p>
       <PillarNav used={used} />

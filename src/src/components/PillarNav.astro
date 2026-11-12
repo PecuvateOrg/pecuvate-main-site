@@ -14,7 +14,7 @@ const active = 'border-brand-orange text-brand-orange';
 const idle = 'border-surface-subtle text-ink-muted hover:text-ink-primary hover:border-ink-muted';
 ---
 
-<nav aria-label="Categories" class="flex flex-wrap gap-2 mb-12">
+<nav aria-label="Categories" class="flex flex-wrap justify-center gap-2 mb-12">
   <a href={blogUrl()} class={`${linkClass} ${current ? idle : active}`}>All</a>
   {pillars.filter((p) => used.has(p.slug)).map((p) => (
     <a href={categoryUrl(p.slug)} class={`${linkClass} ${current === p.slug ? active : idle}`}>{pillarLabel(p)}</a>

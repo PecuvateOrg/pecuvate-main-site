@@ -25,9 +25,9 @@ const label = pillarLabel(pillar);
 <BaseLayout title={`${label} — Pecuvate`} description={pillar.description} canonical={categoryUrl(pillar.slug)}>
   <SiteHeader />
   <main class="py-24">
-    <div class="w-full max-w-content mx-auto px-6">
-      <h1 class="text-4xl font-semibold mb-4 text-ink-primary">{label}</h1>
-      <p class="text-ink-muted max-w-2xl mb-10">{pillar.description}</p>
+    <div class="w-full max-w-3xl mx-auto px-6">
+      <h1 class="text-4xl font-semibold mb-4 text-ink-primary text-center">{label}</h1>
+      <p class="text-ink-muted max-w-2xl mx-auto text-center mb-10">{pillar.description}</p>
       <PillarNav current={pillar.slug} used={used} />
       <PostList posts={posts} />
     </div>

@@ -13,7 +13,7 @@ const posts = (await getPublishedPosts()).slice(0, 3);
         How we must look at things in order to progress, using the resources and technology already in reach.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {posts.map((post) => (
           <a
             href={postUrl(post.id)}
