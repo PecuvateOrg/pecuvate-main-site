@@ -14,7 +14,15 @@
 }
 
 
-/* Page transition keyframes (used by BaseLayout's ClientRouter animation). */
+/* Page transitions: the browser's own cross-document view transitions (no router, no JS).
+   Web Build Framework motion Level 1: old page fades out, new page fades in and rises 20px.
+   Browsers without support simply load the page. */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: 0.2s ease-in both pvPageOut; }
+::view-transition-new(root) { animation: 0.5s cubic-bezier(0.22, 1, 0.36, 1) both pvPageIn; }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}
 @keyframes pvPageOut { to { opacity: 0; } }
 @keyframes pvPageIn { from { opacity: 0; transform: translateY(20px); } }
 
