@@ -9,10 +9,10 @@ const projects = [
 ];
 ---
 
-<section id="built" class="py-24 border-b border-surface-subtle bg-white">
+<section id="built" class="py-16 md:py-24 border-b border-surface-subtle bg-white">
   <div class="w-full max-w-content mx-auto px-6">
 
-    <p class="text-xs font-medium uppercase tracking-wider text-brand-orange mb-3 text-center">What we’ve built</p>
+    <p class="text-xs font-medium uppercase tracking-wider text-brand-orange-text mb-3 text-center">What we’ve built</p>
     <h2 class="text-3xl font-semibold mb-4 text-ink-primary text-center">Built, running and in daily use</h2>
     <p class="text-ink-muted max-w-2xl mx-auto text-center mb-12 leading-relaxed">Empowr CIC is a community interest company in our own group. Its platforms run on the same approach we offer.</p>
 
@@ -22,7 +22,7 @@ const projects = [
           <p class="text-xs font-medium uppercase tracking-wider text-ink-muted mb-2">{p.tag}</p>
           <h3 class="text-lg font-semibold mb-2 text-ink-primary">{p.title}</h3>
           <p class="text-ink-muted text-sm leading-relaxed">{p.description}</p>
-          {p.href && <a href={p.href} class="mt-4 inline-flex min-h-[44px] items-center text-sm text-brand-orange hover:underline">Learn more &rarr;</a>}
+          {p.href && <a href={p.href} class="mt-4 inline-flex min-h-[44px] items-center text-sm text-brand-orange-text hover:underline">Learn more &rarr;</a>}
         </div>
       ))}
     </div>

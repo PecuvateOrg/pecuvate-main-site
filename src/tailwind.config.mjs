@@ -7,6 +7,8 @@ export default {
       colors: {
         brand: {
           orange: '#F47C20',
+          // Orange for TEXT: #F47C20 is 2.7:1 on white; this is 5.0:1 (WCAG AA). Borders/logo keep #F47C20.
+          'orange-text': '#B45309',
           yellow: '#F5C200',
           gray:   '#8C8C8C',
         },

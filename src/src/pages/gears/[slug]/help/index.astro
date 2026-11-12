@@ -26,7 +26,7 @@ const title = `${gear.name} ${GEARS.singular}`;
       <ul class="space-y-8">
         {articles.map((a) => (
           <li class="border-t-2 border-brand-orange pt-6">
-            <a href={gearHelpUrl(gear.slug, a.id.split('/')[1])} class="text-xl font-semibold text-ink-primary hover:text-brand-orange">{a.data.title}</a>
+            <a href={gearHelpUrl(gear.slug, a.id.split('/')[1])} class="text-xl font-semibold text-ink-primary hover:text-brand-orange-text">{a.data.title}</a>
             <p class="mt-2 text-ink-muted leading-relaxed">{a.data.description}</p>
           </li>
         ))}
