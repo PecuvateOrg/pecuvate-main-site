@@ -4,7 +4,7 @@ import SiteHeader from '@/components/SiteHeader.astro';
 import Footer from '@/components/Footer.astro';
 
 const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '';
-const topics = ['A project', 'Gears', 'Partnership', 'Something else'];
+const topics = ['A platform or app', 'Automation and AI', 'Operations and finance', 'Gears', 'Partnership', 'Something else'];
 const email = 'enquiries@pecuvate.com';
 const input = 'w-full min-h-[44px] px-4 py-2 border border-surface-subtle bg-white text-ink-primary focus:border-ink-primary outline-none transition-colors';
 const label = 'block text-sm font-medium mb-2 text-ink-primary';
@@ -12,15 +12,14 @@ const label = 'block text-sm font-medium mb-2 text-ink-primary';
 
 <BaseLayout
   title="Get in touch — Pecuvate"
-  description="Tell us what you need. We read every message and reply by email."
+  description="Need something built, a process automated or a Gear connected? Got questions about how we work? Let us know."
   canonical="https://www.pecuvate.com/contact/"
 >
   <SiteHeader />
   <main class="py-16 md:py-24">
     <div class="w-full max-w-xl mx-auto px-6">
-      <p class="text-xs font-medium uppercase tracking-wider text-brand-orange-text mb-3 text-center">Get in touch</p>
       <h1 class="text-4xl font-semibold mb-4 text-ink-primary text-center text-balance">Tell us what you need</h1>
-      <p class="text-ink-muted text-center mb-12 leading-relaxed">We read every message and reply by email, usually within two working days.</p>
+      <p class="text-ink-muted text-center mb-12 leading-relaxed">Need something built, a process automated or a Gear connected? Got questions about how we work? Let us know.</p>
 
       <form id="contact-form" class="grid gap-6" novalidate data-sitekey={siteKey}>
         <div>
