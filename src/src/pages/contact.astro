@@ -6,7 +6,8 @@ import Footer from '@/components/Footer.astro';
 const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '';
 const topics = ['A platform or app', 'Automation and AI', 'Operations and finance', 'Gears', 'Partnership', 'Something else'];
 const email = 'enquiries@pecuvate.com';
-const input = 'w-full min-h-[44px] px-4 py-2 border border-surface-subtle bg-white text-ink-primary focus:border-ink-primary outline-none transition-colors';
+const steps = ['We read your message.', 'We reply by email with how we’d approach it.', 'If it’s a fit, we set up a short call.'];
+const input = 'w-full min-h-[48px] px-4 rounded-xl border border-brand-gray bg-surface text-base text-ink-primary placeholder:text-ink-muted/70 hover:border-ink-muted focus:bg-white focus:border-brand-orange focus:ring-4 focus:ring-brand-orange/20 outline-none transition';
 const label = 'block text-sm font-medium mb-2 text-ink-primary';
 ---
 
@@ -17,51 +18,74 @@ const label = 'block text-sm font-medium mb-2 text-ink-primary';
 >
   <SiteHeader />
   <main class="py-16 md:py-24">
-    <div class="w-full max-w-xl mx-auto px-6">
-      <h1 class="text-4xl font-semibold mb-4 text-ink-primary text-center text-balance">Tell us what you need</h1>
-      <p class="text-ink-muted text-center mb-12 leading-relaxed">Need something built, a process automated or a Gear connected? Got questions about how we work? Let us know.</p>
+    <div class="w-full max-w-content mx-auto px-6 grid gap-12 lg:grid-cols-[5fr_7fr] lg:gap-16 items-start">
 
-      <form id="contact-form" class="grid gap-6" novalidate data-sitekey={siteKey}>
-        <div>
-          <label for="topic" class={label}>What is it about?</label>
-          <select id="topic" name="topic" class={input}>
-            {topics.map((t) => <option value={t}>{t}</option>)}
-          </select>
-        </div>
-        <div>
-          <label for="name" class={label}>Your name</label>
-          <input id="name" name="name" autocomplete="name" required maxlength="120" class={input} />
-        </div>
-        <div>
-          <label for="email" class={label}>Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required maxlength="254" class={input} />
-        </div>
-        <div>
-          <label for="organisation" class={label}>Organisation <span class="font-normal text-ink-muted">(optional)</span></label>
-          <input id="organisation" name="organisation" autocomplete="organization" maxlength="160" class={input} />
-        </div>
-        <div>
-          <label for="message" class={label}>Message</label>
-          <textarea id="message" name="message" rows="6" required maxlength="5000" class={`${input} leading-relaxed`}></textarea>
-        </div>
-        <div class="hidden" aria-hidden="true">
-          <label for="website">Leave this empty</label>
-          <input id="website" name="website" tabindex="-1" autocomplete="off" />
-        </div>
-        <div id="captcha-box" class="flex justify-center min-h-[65px]"></div>
-        <p id="form-error" role="alert" class="hidden text-sm text-red-700 text-center"></p>
-        <button type="submit" class="w-full min-h-[44px] px-6 bg-ink-primary text-white text-sm font-medium hover:bg-black transition-colors disabled:opacity-60">Send message</button>
-        <p class="text-xs text-ink-muted text-center leading-relaxed">
-          We use your details only to reply to you. See our <a href="/legal/privacy-policy" class="underline underline-offset-2 hover:text-ink-primary">privacy policy</a>.
-        </p>
-      </form>
+      <div class="lg:sticky lg:top-28">
+        <h1 class="text-4xl md:text-5xl font-semibold mb-4 text-ink-primary text-balance">Tell us what you need</h1>
+        <p class="text-lg text-ink-muted leading-relaxed">Need something built, a process automated or a Gear connected? Got questions about how we work? Let us know.</p>
 
-      <div id="form-sent" class="hidden text-center" tabindex="-1">
-        <h2 class="text-2xl font-semibold mb-3 text-ink-primary">Thank you, your message is on its way</h2>
-        <p class="text-ink-muted leading-relaxed">We will reply to the email address you gave.</p>
+        <h2 class="mt-10 mb-4 text-sm font-semibold text-ink-primary">What happens next</h2>
+        <ol class="grid gap-4">
+          {steps.map((s, i) => (
+            <li class="flex gap-4 items-start">
+              <span class="flex-none w-8 h-8 rounded-full bg-brand-orange/15 text-brand-orange-text text-sm font-semibold flex items-center justify-center">{i + 1}</span>
+              <span class="pt-1 text-ink-muted leading-relaxed">{s}</span>
+            </li>
+          ))}
+        </ol>
+
+        <p class="mt-10 text-sm text-ink-muted">Prefer email? Write to <a href={`mailto:${email}`} class="inline-flex min-h-[44px] items-center text-brand-orange-text font-medium hover:underline">{email}</a></p>
       </div>
 
-      <p class="text-sm text-ink-muted text-center mt-12">Prefer email? Write to <a href={`mailto:${email}`} class="underline underline-offset-2 hover:text-ink-primary">{email}</a>.</p>
+      <div class="bg-white rounded-2xl shadow-[0_8px_30px_rgba(26,26,26,0.08)] ring-1 ring-black/5 p-6 sm:p-10">
+        <form id="contact-form" class="grid gap-6" novalidate data-sitekey={siteKey}>
+          <div>
+            <label for="topic" class={label}>What can we help with?</label>
+            <div class="relative">
+              <select id="topic" name="topic" class={`${input} appearance-none pr-12 cursor-pointer`}>
+                {topics.map((t) => <option value={t}>{t}</option>)}
+              </select>
+              <svg class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-ink-muted" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-2">
+            <div>
+              <label for="name" class={label}>Your name</label>
+              <input id="name" name="name" autocomplete="name" required maxlength="120" class={input} />
+            </div>
+            <div>
+              <label for="organisation" class={label}>Organisation <span class="font-normal text-ink-muted">(optional)</span></label>
+              <input id="organisation" name="organisation" autocomplete="organization" maxlength="160" class={input} />
+            </div>
+          </div>
+          <div>
+            <label for="email" class={label}>Where should we reply?</label>
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required maxlength="254" placeholder="you@example.com" class={input} />
+          </div>
+          <div>
+            <label for="message" class={label}>Tell us a bit more</label>
+            <textarea id="message" name="message" rows="6" required maxlength="5000" placeholder="What you’re trying to do, and anything you’ve already tried." class={`${input} py-3 leading-relaxed resize-y`}></textarea>
+          </div>
+          <div aria-hidden="true" class="hidden">
+            <label for="website">Leave this empty</label>
+            <input id="website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <div id="captcha-box" class="flex justify-center"></div>
+          <p id="form-error" role="alert" class="hidden text-sm text-red-700 bg-red-50 rounded-lg px-4 py-3"></p>
+          <button type="submit" class="w-full min-h-[52px] rounded-xl bg-brand-orange-text text-white font-semibold hover:bg-ink-primary focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-orange/40 transition-colors duration-200 disabled:opacity-60">Send message →</button>
+          <p class="text-xs text-ink-muted text-center">
+            We use your details only to reply to you. See our <a href="/legal/privacy-policy" class="underline hover:text-ink-primary">privacy policy</a>.
+          </p>
+        </form>
+
+        <div id="form-sent" class="hidden text-center py-10 outline-none" tabindex="-1">
+          <span class="mx-auto mb-6 w-14 h-14 rounded-full bg-brand-orange/15 text-brand-orange-text flex items-center justify-center text-2xl" aria-hidden="true">✓</span>
+          <h2 class="text-2xl font-semibold mb-3 text-ink-primary">Thank you, your message is on its way</h2>
+          <p class="text-ink-muted">We’ll reply to the email address you gave.</p>
+        </div>
+      </div>
+
     </div>
   </main>
   <Footer />
@@ -144,7 +168,7 @@ const label = 'block text-sm font-medium mb-2 text-ink-primary';
       }
       if (widgetId && window.turnstile) window.turnstile.reset(widgetId);
       button.disabled = false;
-      button.textContent = 'Send message';
+      button.textContent = 'Send message →';
     });
   })();
 </script>
