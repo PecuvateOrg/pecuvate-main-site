@@ -2,10 +2,12 @@
 import { GEARS, gearUrl } from '@/lib/gears';
 
 const projects = [
-  { tag: 'Empowr CIC', title: 'Members and bookings', description: 'One platform for booking sessions, memberships, payments, refunds and waivers, replacing a set of separate tools.' },
-  { tag: 'Empowr CIC', title: 'Freelancer network', description: 'Applications, contracts, shifts and payroll run as one connected flow instead of a week of manual coordination.' },
-  { tag: 'Pecuvate', title: 'AI customer support', description: 'A chat assistant that answers from the organisation’s own knowledge and hands over to staff when it should.' },
-  { tag: 'Product', title: `Finance ${GEARS.singular}`, description: 'Syncs the bank and keeps the books through your own AI app, with everything stored on your computer.', href: gearUrl('finance') },
+  { title: 'AI customer support that answers from your own knowledge', description: 'Replies to customers from your organisation’s own knowledge and hands over to your staff when it should.' },
+  { title: 'End-to-end e-signing, run from your AI assistant', name: 'PecuSign', description: 'Your AI assistant prepares and sends the document; it comes back signed, sealed and stored.', href: gearUrl('pecusign') },
+  { title: 'Bookkeeping and bank sync through your AI assistant', name: `Finance ${GEARS.singular}`, description: 'Syncs the bank and keeps the books from the AI app you already use, with your data kept on your computer.', href: gearUrl('finance') },
+  { title: 'Shared inbox turned into a department to-do list', name: 'Staff Inbox', description: 'Turns shared email and platform messages into one to-do list per department. Every message has an owner, a customer’s reply reopens the task, and nothing waits on one person’s inbox.' },
+  { title: 'Booking, membership and payments in one platform', description: 'Sessions, memberships, payments, refunds and waivers in one place instead of five separate tools.' },
+  { title: 'Freelancer hiring to payroll, as one workflow', description: 'Applications, contracts, shifts and payroll as one connected flow, not a week of manual coordination.' },
 ];
 ---
 
@@ -13,16 +15,16 @@ const projects = [
   <div class="w-full max-w-content mx-auto px-6">
 
     <p class="text-xs font-medium uppercase tracking-wider text-brand-orange-text mb-3 text-center">What we’ve built</p>
-    <h2 class="text-3xl font-semibold mb-4 text-ink-primary text-center">Built, running and in daily use</h2>
-    <p class="text-ink-muted max-w-2xl mx-auto text-center mb-12 leading-relaxed">Empowr CIC is a community interest company in our own group. Its platforms run on the same approach we offer.</p>
+    <h2 class="text-3xl font-semibold mb-4 text-ink-primary text-center">Tools we’ve built, in use every day</h2>
+    <p class="text-ink-muted max-w-2xl mx-auto text-center mb-12 leading-relaxed">Each one runs in a real organisation today. Several started inside Empowr CIC, a community interest company in our own group.</p>
 
-    <div class="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
       {projects.map((p) => (
-        <div class="p-8 border border-surface-subtle">
-          <p class="text-xs font-medium uppercase tracking-wider text-ink-muted mb-2">{p.tag}</p>
-          <h3 class="text-lg font-semibold mb-2 text-ink-primary">{p.title}</h3>
-          <p class="text-ink-muted text-sm leading-relaxed">{p.description}</p>
-          {p.href && <a href={p.href} class="mt-4 inline-flex min-h-[44px] items-center text-sm text-brand-orange-text hover:underline">Learn more &rarr;</a>}
+        <div class="flex flex-col p-8 border border-surface-subtle">
+          <h3 class="text-lg font-semibold text-ink-primary">{p.title}</h3>
+          {p.name && <p class="mt-1 text-xs font-medium uppercase tracking-wider text-ink-muted">{p.name}</p>}
+          <p class="mt-3 text-ink-muted text-sm leading-relaxed">{p.description}</p>
+          {p.href && <a href={p.href} class="mt-auto pt-4 inline-flex min-h-[44px] items-center text-sm text-brand-orange-text hover:underline">View more &rarr;</a>}
         </div>
       ))}
     </div>

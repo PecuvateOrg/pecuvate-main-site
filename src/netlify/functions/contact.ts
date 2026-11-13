@@ -5,7 +5,7 @@
 
 const CONTACT_TO = process.env.CONTACT_TO || 'enquiries@pecuvate.com';
 const FROM = 'Pecuvate website <noreply@pecuvate.com>';
-const TOPICS = ['A project', 'Gears', 'Partnership', 'Something else'];
+const TOPICS = ['A platform or app', 'Automation and AI', 'Operations and finance', 'Gears', 'Partnership', 'Something else'];
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const LIMITS = { name: 120, email: 254, organisation: 160, message: 5000 };
 
