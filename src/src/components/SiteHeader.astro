@@ -16,7 +16,8 @@ const onGears = Astro.url.pathname.startsWith(gearsUrl());
       <a href={`${SITE_URL}/about/`} aria-current={onAbout ? 'page' : undefined} class="inline-flex min-h-[44px] min-w-[44px] px-2 justify-center items-center text-sm text-ink-muted hover:text-ink-primary transition-colors duration-200">About</a>
       <a href={`${SITE_URL}${gearsUrl()}`} aria-current={onGears ? 'page' : undefined} class="inline-flex min-h-[44px] min-w-[44px] px-2 justify-center items-center text-sm text-ink-muted hover:text-ink-primary transition-colors duration-200">{GEARS.plural}</a>
       <a href={blogUrl()} class="max-[359px]:hidden inline-flex min-h-[44px] min-w-[44px] px-2 justify-center items-center text-sm text-ink-muted hover:text-ink-primary transition-colors duration-200">Blog</a>
-      <a href="https://account.pecuvate.com/sign-in" class="inline-flex min-h-[44px] min-w-[44px] px-2 justify-center items-center text-sm font-medium text-ink-primary hover:text-brand-orange-text transition-colors duration-200">Sign in</a>
+      {/* Hidden until Pecuvate ID Phase 2 (customer home) ships — owner 2026-11-13. Restore by removing this comment wrapper. */}
+      {/* <a href="https://account.pecuvate.com/sign-in" class="inline-flex min-h-[44px] min-w-[44px] px-2 justify-center items-center text-sm font-medium text-ink-primary hover:text-brand-orange-text transition-colors duration-200">Sign in</a> */}
     </nav>
   </div>
 </header>
