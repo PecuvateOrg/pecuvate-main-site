@@ -19,7 +19,7 @@ const hasHelp = (await getCollection('gearHelp')).some((a) => a.id.startsWith(`$
   <main>
     <section class="py-16 md:py-24 border-b border-surface-subtle">
       <div class="w-full max-w-3xl mx-auto px-6 text-center">
-        <a href={gearsUrl()} class="inline-flex min-h-[44px] items-center text-sm text-ink-muted hover:text-ink-primary mb-6">← All {GEARS.plural.toLowerCase()}</a>
+        <a href={gearsUrl()} class="inline-flex min-h-[44px] items-center text-sm text-ink-muted hover:text-ink-primary mb-6">← All {GEARS.plural}</a>
         {gear.status === 'in-development' && <p class="text-xs font-medium uppercase tracking-wider text-brand-orange-text mb-3">In development</p>}
         <h1 class="text-4xl md:text-5xl font-semibold leading-tight text-ink-primary">{title}</h1>
         <p class="mt-6 text-lg text-ink-muted leading-relaxed text-balance">{gear.summary}</p>

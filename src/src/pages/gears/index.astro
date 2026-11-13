@@ -5,8 +5,8 @@ import Footer from '@/components/Footer.astro';
 import { GEARS, gears, gearUrl } from '@/lib/gears';
 
 const how = [
-  { title: 'Connect it to your AI app', body: `Add it to Claude, ChatGPT or another AI app that supports connectors (MCP): online, or installed on your computer where a ${GEARS.singular.toLowerCase()} offers it.` },
-  { title: 'Ask for what you need', body: `Your AI app can now use the ${GEARS.singular.toLowerCase()}’s tools. You ask in plain words; it does the work.` },
+  { title: 'Connect it to your AI app', body: `Add it to Claude, ChatGPT or another AI app that supports connectors (MCP): online, or installed on your computer where a ${GEARS.singular} offers it.` },
+  { title: 'Ask for what you need', body: `Your AI app can now use the ${GEARS.singular}’s tools. You ask in plain words; it does the work.` },
   { title: 'Approve what matters', body: 'Anything that files, sends or cannot be undone is shown to you first, and happens only when you confirm.' },
 ];
 ---
@@ -18,7 +18,7 @@ const how = [
       <div class="w-full max-w-3xl mx-auto px-6 text-center">
         <p class="text-xs font-medium uppercase tracking-wider text-brand-orange-text mb-3">Pecuvate {GEARS.plural}</p>
         <h1 class="text-4xl md:text-5xl font-semibold leading-tight text-balance text-ink-primary">Our tools, in your AI app. As little of your data as possible.</h1>
-        <p class="mt-6 text-lg text-ink-muted leading-relaxed text-balance">A {GEARS.singular.toLowerCase()} adds a set of tools we’ve built to the AI app you already use. Each one says on its page where your data goes: some run entirely on your own computer, others handle your data only for the task and keep no copy.</p>
+        <p class="mt-6 text-lg text-ink-muted leading-relaxed text-balance">A {GEARS.singular} adds a set of tools we’ve built to the AI app you already use. Each one says on its page where your data goes: some run entirely on your own computer, others handle your data only for the task and keep no copy.</p>
       </div>
     </section>
 
@@ -39,7 +39,7 @@ const how = [
 
     <section class="py-16 md:py-24 border-b border-surface-subtle" aria-labelledby="list-heading">
       <div class="w-full max-w-content mx-auto px-6">
-        <h2 id="list-heading" class="text-3xl font-semibold mb-12 text-ink-primary text-center">Choose a {GEARS.singular.toLowerCase()}</h2>
+        <h2 id="list-heading" class="text-3xl font-semibold mb-12 text-ink-primary text-center">Choose a {GEARS.singular}</h2>
         <ul class="flex flex-wrap justify-center gap-8">
           {gears.map((g) => (
             <li class="w-full md:w-[calc((100%-4rem)/3)] p-8 border border-surface-subtle bg-white flex flex-col">
