@@ -37,7 +37,6 @@ CONTEXT.md.
 | Pages, components, styles | `src/src/` | `src/CONTEXT.md` |
 | Feature specs, architecture decisions | `planning/` | `planning/CONTEXT.md` |
 | Deploy, env vars, Netlify config | `ops/` | `ops/CONTEXT.md` |
-| Content, design, asset references | `Production/` | `Production/context-guide.md` |
 
 ---
 
@@ -59,7 +58,7 @@ CONTEXT.md.
 - Build output → `src/dist/` (gitignored)
 - Netlify config → `netlify.toml` (project root)
 - Architectural decisions → `planning/decisions/`
-- Content / design / asset docs → `Production/`
+- Design decisions → `design-system/MASTER.md` · public copy rules → Pecuvate CNS `company/operations/public-positioning.md`
 
 ---
 
@@ -70,7 +69,7 @@ CONTEXT.md.
 | Framework | Astro | Content-focused static site; no application complexity |
 | Role | Gateway, not a platform | Owner 2026-10-26: management platforms are built as separate Next.js apps; this site stays Astro and links out to them |
 | Deployment | Netlify — `pecuvate.com` | Git-connected, no server to manage |
-| Page type | Landing page + `/blog/` + `/kits/` | Landing page for presence; blog for the founder's writing; kits for product customers (shared agent-setup guide + one page per kit, generated from `src/src/lib/kits.ts`) — scope in the KB's `operations/public-positioning.md` § Kits surface |
+| Page type | Landing page + `/blog/` + `/gears/` + `/contact/` | Landing page for presence; blog for the founder's writing; Gears for product customers (one page per Gear plus help pages, generated from `src/src/lib/gears.ts`; `/kits/*` redirects) — scope in the CNS `operations/public-positioning.md` § Gears surface |
 | Blog | Astro content collection (Markdown in repo), RSS + sitemap | Owned, indexable, no third-party dependency; replaced the Medium RSS plan 2026-09-30 |
 | Design aesthetic | Systems-thinking, architectural | Mirrors Pecuvate's methodology |
 | Styling | Tailwind CSS | Agreed post-initial decisions |
@@ -83,9 +82,8 @@ Design constraints are non-negotiable — see `NON-NEGOTIABLES.md`.
 
 - Do not load `planning/` unless the task involves specs or architecture decisions
 - Do not load `ops/` unless the task involves deployment or environment variables
-- Do not load `Production/` unless working on content, design, or assets
-- Before any structural or design decision, read `Production/context-guide.md`
-- Before any deploy, run `Production/04-deployment/deploy-checklist.md`
+- Before any design change, read `design-system/MASTER.md`
+- Before any deploy, follow `ops/CONTEXT.md` → Before and after a deploy
 
 ---
 

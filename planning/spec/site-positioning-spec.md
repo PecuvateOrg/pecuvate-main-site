@@ -1,6 +1,6 @@
 # Pecuvate Main Site — Positioning & Voice Spec
 
-**Status:** DRAFT — for founder review. Not yet absorbed into the KB.
+**Status:** SUPERSEDED — absorbed 2026-07-27 into the Pecuvate CNS `company/operations/public-positioning.md`, which is the authority. Kept for history; its `Production/` references point to a folder retired 2026-11-14.
 **Created:** 2026-07-22
 **Sources:** `~/projects/Pecuvate/company/` — `identity/positioning.md`, `identity/pecuvate.md`, BFG KB `entities/bfg-alliance.md`, `identity/three-modes.md`, `identity/pecuvate-os.md`, `growth/goals.md`, `growth/roadmap.md`
 **Absorption path:** once approved, this becomes `synthesis/public-positioning.md` in the PECUVATE vault (+ index row + log entry), and it governs all public-facing Pecuvate copy from then on. It resolves roadmap open questions #2 (narrative order per audience) and #3 (portfolio as proof without reduction) for the website surface.
