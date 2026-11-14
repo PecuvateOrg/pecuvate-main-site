@@ -33,6 +33,7 @@ CONTEXT.md.
 
 | Task | Go to | Read first |
 |---|---|---|
+| **Design: colours, type, cards, buttons, forms, wording** | `design-system/` | `design-system/MASTER.md` (read before any page change) |
 | Pages, components, styles | `src/src/` | `src/CONTEXT.md` |
 | Feature specs, architecture decisions | `planning/` | `planning/CONTEXT.md` |
 | Deploy, env vars, Netlify config | `ops/` | `ops/CONTEXT.md` |
