@@ -53,4 +53,4 @@ Deploy with `/netlify-deploy`. Run `/pre-build-check` and `/pre-deploy-security`
 
 ## Structure
 
-See `CONTEXT.md` and `CLAUDE.md` for the full routing table (`Production/` for content and design docs, `planning/` for specs and ADRs, `ops/` for deployment runbooks).
+See `CONTEXT.md` and `CLAUDE.md` for the full routing table (`design-system/` for design decisions, `planning/` for specs and ADRs, `ops/` for deployment runbooks).

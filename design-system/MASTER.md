@@ -73,3 +73,4 @@ Framework defaults apply, plus the brand kit's stricter sizes (fields 48px, main
 
 ## Open questions
 - [ ] Gear and product detail pages for the cards without one yet.
+- [ ] Social sharing image (1200×630, `og:image`): none yet, so links shared on LinkedIn show no picture.

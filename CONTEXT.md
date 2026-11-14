@@ -28,7 +28,7 @@ Pecuvate Main Site/
   CLAUDE.md             MWP identity + routing
   CONTEXT.md            This file
   netlify.toml          base = "src", publish = "dist"
-  Production/           Content, design, asset planning docs
+  design-system/        Design record (MASTER.md): this site's own design choices
   planning/             Feature specs and ADRs
   ops/                  Deployment runbooks
   src/                  MWP src root

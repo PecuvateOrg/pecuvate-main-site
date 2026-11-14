@@ -9,4 +9,4 @@ Feature specs and architectural decisions for the Pecuvate Main Site.
 
 ## Note
 
-Pre-migration planning artefacts live in `Production/` — that folder predates the MWP layout. New decisions go here.
+The pre-build questionnaire (`Production/`) was retired 2026-11-14; it is in git history. New decisions go here.
