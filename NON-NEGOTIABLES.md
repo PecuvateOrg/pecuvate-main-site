@@ -21,4 +21,4 @@ project.
 - Components: PascalCase (`HeroSection.astro`)
 - Pages: Astro file-based routing in `src/src/pages/`
 - Styles: CSS custom properties for all design tokens — no magic numbers
-- Spacing: 8px base unit scale (defined in `Production/02-design/design-system.md`)
+- Design: `design-system/MASTER.md` (this site) on top of the Pecuvate brand kit; never restate brand values in this repo

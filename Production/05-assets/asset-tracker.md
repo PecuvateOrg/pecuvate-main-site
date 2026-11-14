@@ -26,7 +26,7 @@ Track all assets required for the build. Update status as assets are received.
 | Email icon | SVG | needed | — | For Connect section |
 | LinkedIn icon | SVG | needed | — | For Connect section |
 
-*Note: Icons may be sourced from a library (e.g., Heroicons, Phosphor) rather than custom — confirm in `02-design/design-system.md`*
+*Note: Icons may be sourced from a library (e.g., Heroicons, Phosphor) rather than custom — confirm in `design-system/MASTER.md`*
 
 ---
 
@@ -45,7 +45,7 @@ Track all assets required for the build. Update status as assets are received.
 |-------|--------------|--------|----------|-------|
 | (none planned) | — | — | — | Decision: typographic/geometric only |
 
-*Update if imagery decision changes in `02-design/visual-direction.md`*
+*Update if imagery decision changes in the Pecuvate brand kit (visual direction)*
 
 ---
 

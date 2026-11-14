@@ -7,7 +7,7 @@ Always start with `CLAUDE.md` at the project root for identity and rules, then `
 ## What the process looks like (first I do this, then I do that)
 
 1. **Content** — Fill in all section files in `01-content/` before touching design or code
-2. **Design** — Resolve design system decisions in `02-design/` based on content
+2. **Design** — `design-system/MASTER.md` (02-design retired 2026-11-14)
 3. **Technical** — Confirm integration and requirements decisions in `03-technical/`
 4. **Assets** — Gather and log all required assets in `05-assets/`
 5. **Build** — Write the code (HTML/CSS/JS or chosen framework)
@@ -18,7 +18,7 @@ Always start with `CLAUDE.md` at the project root for identity and rules, then `
 - `context-guide.md` — Master structure document for the landing page (source of truth)
 - `CONTEXT.md` — This file. Workspace orientation.
 - `01-content/` — One file per page section. Documents approved copy and content gaps.
-- `02-design/` — Design system, color, typography, visual direction.
+- Design moved to `design-system/MASTER.md` (2026-11-14).
 - `03-technical/` — Medium integration, performance, accessibility requirements.
 - `04-deployment/` — Netlify config, environment variables, deploy checklist.
 - `05-assets/` — Tracking for all required assets (logo, icons, imagery).
