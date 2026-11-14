@@ -48,7 +48,7 @@
 - **View more →** only on cards with a page (the Gear pages today).
 
 ### `/contact/`
-- Two columns on desktop: left = title, one line, **What happens next** (3 steps), email
+- Two columns on desktop (the left column scrolls with the page, not sticky: owner saw "double scrolling", 2026-11-14): left = title, one line, **What happens next** (3 steps), email
   fallback; right = the form in a raised white card. One column on phones.
 - No eyebrow label and no reply-time promise.
 - Topic dropdown: A platform or app · Automation and AI · Operations and finance · Gears ·
