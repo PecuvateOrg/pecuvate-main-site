@@ -13,7 +13,7 @@ Run through this before every production deploy.
 
 ## Design
 
-- [ ] All `[ ]` items in `02-design/` are resolved and marked `[approved]`
+- [ ] Page changes follow `design-system/MASTER.md`
 - [ ] Color contrast ratios verified (WCAG AA)
 - [ ] Typography renders correctly across browsers
 

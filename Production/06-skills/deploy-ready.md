@@ -11,7 +11,7 @@ Checks the project against the deploy checklist and surfaces anything that would
 When this skill is invoked, do the following:
 
 1. Read `Production/04-deployment/deploy-checklist.md`
-2. Read all files in `Production/01-content/`, `Production/02-design/`, `Production/03-technical/`
+2. Read all files in `Production/01-content/`, `design-system/MASTER.md`, `Production/03-technical/`
 3. For each checklist item, assess whether it is likely resolved based on the documentation
 4. Flag any item that is:
    - Explicitly unresolved (`[ ]`)
