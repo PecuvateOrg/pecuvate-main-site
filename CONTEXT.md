@@ -5,7 +5,7 @@
 Static Astro site at `pecuvate.com`. Introduces Pecuvate and hosts its blog at `/blog/`.
 
 For copy, positioning, and entity descriptions — read the KB before writing any site content:
-`~/projects/Pecuvate/CLAUDE.md` (routes to the Pecuvate CNS, `company/`) → the workspace's `CONTEXT.md`
+`~/projects/Pecuvate/AGENTS.md` (routes to the Pecuvate CNS, `company/`) → the workspace's `CONTEXT.md`
 
 ## Page sections
 
@@ -25,7 +25,6 @@ Blog: `/blog/` index, `/blog/<slug>/` posts, `/rss.xml`. Posts are Markdown in `
 
 ```
 Pecuvate Main Site/
-  CLAUDE.md             MWP identity + routing
   CONTEXT.md            This file
   netlify.toml          base = "src", publish = "dist"
   design-system/        Design record (MASTER.md): this site's own design choices
